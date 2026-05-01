@@ -2,7 +2,10 @@ import hashlib
 
 from sqlalchemy.orm import Session
 
+from app.core.logging_config import get_logger
 from app.models.models import Company, Job
+
+logger = get_logger(__name__)
 
 
 class SearchService:
@@ -17,6 +20,9 @@ class SearchService:
             .limit(batch_size)
             .all()
         )
+
+        logger.info("search.run_cycle.start batch_size=%s companies=%s", batch_size, len(companies))
+
         discovered = 0
         for company in companies:
             title = f"Sample {company.name} Role"
@@ -24,7 +30,9 @@ class SearchService:
             job_hash = hashlib.sha1(f"{company.name}|{title}|{apply_url}".encode()).hexdigest()
             exists = self.db.query(Job).filter(Job.job_hash == job_hash).first()
             if exists:
+                logger.info("search.job.skipped company=%s reason=existing_hash", company.name)
                 continue
+
             self.db.add(
                 Job(
                     company_id=company.id,
@@ -37,5 +45,9 @@ class SearchService:
                 )
             )
             discovered += 1
+            logger.info("search.job.created company=%s apply_url=%s", company.name, apply_url)
+
         self.db.commit()
-        return {"companies_processed": len(companies), "jobs_inserted": discovered}
+        result = {"companies_processed": len(companies), "jobs_inserted": discovered}
+        logger.info("search.run_cycle.complete companies=%s jobs_inserted=%s", len(companies), discovered)
+        return result

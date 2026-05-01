@@ -1,0 +1,284 @@
+2026-03-30 06:00:24|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-30 06:00:24|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-03-30 06:00:24|INFO|apscheduler.scheduler|Scheduler started
+2026-03-30 06:00:24|INFO|app.main|scheduler.started interval_hours=12
+2026-03-30 06:00:24|INFO|app.main|request.start id=04ca8bef method=POST path=/profile
+2026-03-30 06:00:24|INFO|app.api.routes|profile.upsert roles=1 skills=2
+2026-03-30 06:00:24|INFO|app.services.profile_service|profile.saved id=1 roles=1 skills=2 locations=1
+2026-03-30 06:00:24|INFO|app.main|request.complete id=04ca8bef method=POST path=/profile status=200 duration_ms=25.81
+2026-03-30 06:00:24|INFO|httpx|HTTP Request: POST http://testserver/profile "HTTP/1.1 200 OK"
+2026-03-30 06:00:24|INFO|app.main|request.start id=8f20cd5d method=GET path=/profile
+2026-03-30 06:00:24|INFO|app.api.routes|profile.fetch found=True
+2026-03-30 06:00:24|INFO|app.main|request.complete id=8f20cd5d method=GET path=/profile status=200 duration_ms=4.49
+2026-03-30 06:00:24|INFO|httpx|HTTP Request: GET http://testserver/profile "HTTP/1.1 200 OK"
+2026-03-30 06:00:24|INFO|app.main|request.start id=ea89e121 method=POST path=/profile/upload-cv
+2026-03-30 06:00:24|INFO|app.api.routes|profile.upload_cv filename=sample_cv.txt bytes=62 content_type=text/plain
+2026-03-30 06:00:24|INFO|app.services.profile_service|profile.parse_cv.start id=1 path=data\cv\sample_cv.txt chars=62
+2026-03-30 06:00:24|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=210
+2026-03-31 02:08:11|INFO|httpx|HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-03-31 02:08:11|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 02:08:11|INFO|app.services.profile_service|profile.parse_cv.complete id=1 skills=2 roles=1 locations=1
+2026-03-31 02:08:11|INFO|app.main|request.complete id=ea89e121 method=POST path=/profile/upload-cv status=200 duration_ms=72466952.23
+2026-03-31 02:08:11|INFO|httpx|HTTP Request: POST http://testserver/profile/upload-cv "HTTP/1.1 200 OK"
+2026-03-31 02:08:12|INFO|httpx|HTTP Request: GET http://testserver/admin/logs?limit=5 "HTTP/1.1 200 OK"
+2026-03-31 02:08:15|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-31 02:08:15|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-03-31 02:08:15|INFO|apscheduler.scheduler|Scheduler started
+2026-03-31 02:08:15|INFO|app.main|scheduler.started interval_hours=12
+2026-03-31 02:08:15|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-03-31 02:08:37|INFO|app.main|scheduler.disabled
+2026-03-31 02:08:37|INFO|app.main|request.start id=8637bea2 method=POST path=/profile
+2026-03-31 02:08:37|INFO|app.api.routes|profile.upsert roles=1 skills=2
+2026-03-31 02:08:37|INFO|app.services.profile_service|profile.saved id=1 roles=1 skills=2 locations=1
+2026-03-31 02:08:37|INFO|app.main|request.complete id=8637bea2 method=POST path=/profile status=200 duration_ms=56.27
+2026-03-31 02:08:37|INFO|httpx|HTTP Request: POST http://testserver/profile "HTTP/1.1 200 OK"
+2026-03-31 02:08:37|INFO|app.main|request.start id=d231ee6f method=GET path=/profile
+2026-03-31 02:08:37|INFO|app.api.routes|profile.fetch found=True
+2026-03-31 02:08:37|INFO|app.main|request.complete id=d231ee6f method=GET path=/profile status=200 duration_ms=3.85
+2026-03-31 02:08:37|INFO|httpx|HTTP Request: GET http://testserver/profile "HTTP/1.1 200 OK"
+2026-03-31 02:08:37|INFO|app.main|request.start id=8b9d7160 method=POST path=/profile/upload-cv
+2026-03-31 02:08:37|INFO|app.api.routes|profile.upload_cv filename=sample_cv.txt bytes=62 content_type=text/plain
+2026-03-31 02:08:37|INFO|app.services.profile_service|profile.parse_cv.start id=1 path=data\cv\sample_cv.txt chars=62
+2026-03-31 02:08:37|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=210
+2026-03-31 02:08:39|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-31 02:08:39|INFO|app.services.profile_service|profile.parse_cv.complete id=1 skills=2 roles=1 locations=1
+2026-03-31 02:08:39|INFO|app.main|request.complete id=8b9d7160 method=POST path=/profile/upload-cv status=200 duration_ms=2454.89
+2026-03-31 02:08:39|INFO|httpx|HTTP Request: POST http://testserver/profile/upload-cv "HTTP/1.1 200 OK"
+2026-03-31 02:08:39|INFO|httpx|HTTP Request: GET http://testserver/admin/logs?limit=5 "HTTP/1.1 200 OK"
+2026-03-31 02:09:18|INFO|app.main|scheduler.disabled
+2026-03-31 02:09:18|INFO|app.main|request.start id=6f369193 method=GET path=/profile
+2026-03-31 02:09:18|INFO|app.api.routes|profile.fetch found=True
+2026-03-31 02:09:18|INFO|app.main|request.complete id=6f369193 method=GET path=/profile status=200 duration_ms=15.05
+2026-03-31 02:09:18|INFO|app.main|request.start id=3e7cf030 method=POST path=/profile/upload-cv
+2026-03-31 02:09:18|INFO|app.api.routes|profile.upload_cv filename=sample_cv.txt bytes=46 content_type=text/plain
+2026-03-31 02:09:18|INFO|app.services.profile_service|profile.parse_cv.start id=1 path=data\cv\sample_cv.txt chars=46
+2026-03-31 02:09:18|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=194
+2026-03-31 02:09:21|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-31 02:09:21|INFO|app.services.profile_service|profile.parse_cv.complete id=1 skills=2 roles=1 locations=1
+2026-03-31 02:09:21|INFO|app.main|request.complete id=3e7cf030 method=POST path=/profile/upload-cv status=200 duration_ms=2537.25
+2026-03-31 02:13:15|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-31 02:13:15|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-03-31 02:13:15|INFO|apscheduler.scheduler|Scheduler started
+2026-03-31 02:13:15|INFO|app.main|scheduler.started interval_hours=12
+2026-03-31 02:13:15|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-03-31 04:51:01|INFO|app.main|request.start id=8f866315 method=GET path=/health
+2026-03-31 04:51:01|INFO|app.main|request.complete id=8f866315 method=GET path=/health status=200 duration_ms=4.75
+2026-03-31 04:51:01|INFO|app.main|request.start id=1859856c method=GET path=/profile
+2026-03-31 04:51:01|INFO|app.api.routes|profile.fetch found=True
+2026-03-31 04:51:01|INFO|app.main|request.complete id=1859856c method=GET path=/profile status=200 duration_ms=13.43
+2026-03-31 04:51:01|INFO|app.main|request.start id=89585c56 method=GET path=/companies
+2026-03-31 04:51:01|INFO|app.services.company_service|company.list count=61
+2026-03-31 04:51:01|INFO|app.api.routes|companies.list count=61
+2026-03-31 04:51:01|INFO|app.main|request.complete id=89585c56 method=GET path=/companies status=200 duration_ms=5.6
+2026-03-31 04:51:01|INFO|app.main|request.start id=adde4a80 method=GET path=/jobs
+2026-03-31 04:51:01|INFO|app.api.routes|jobs.list count=0
+2026-03-31 04:51:01|INFO|app.main|request.complete id=adde4a80 method=GET path=/jobs status=200 duration_ms=5.71
+2026-03-31 04:51:01|INFO|app.main|request.start id=10739b5f method=GET path=/jobs/matches
+2026-03-31 04:51:01|INFO|app.api.routes|jobs.matches.start jobs=0
+2026-03-31 04:51:01|INFO|app.api.routes|jobs.matches.complete generated=0
+2026-03-31 04:51:01|INFO|app.main|request.complete id=10739b5f method=GET path=/jobs/matches status=200 duration_ms=5.28
+2026-03-31 04:51:27|INFO|app.main|request.start id=a7a65101 method=POST path=/profile/upload-cv
+2026-03-31 04:51:27|INFO|app.api.routes|profile.upload_cv filename=SIDDIGAN-TM.pdf bytes=86204 content_type=application/pdf
+2026-03-31 04:51:27|INFO|app.services.profile_service|profile.parse_cv.start id=1 path=data\cv\SIDDIGAN-TM.pdf chars=65518
+2026-03-31 04:51:27|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=12148
+2026-03-31 04:51:30|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 04:51:30|INFO|app.services.profile_service|profile.parse_cv.complete id=1 skills=2 roles=1 locations=1
+2026-03-31 04:51:30|INFO|app.main|request.complete id=a7a65101 method=POST path=/profile/upload-cv status=200 duration_ms=2472.74
+2026-03-31 04:51:30|INFO|app.main|request.start id=5903c81c method=GET path=/profile
+2026-03-31 04:51:30|INFO|app.api.routes|profile.fetch found=True
+2026-03-31 04:51:30|INFO|app.main|request.complete id=5903c81c method=GET path=/profile status=200 duration_ms=3.67
+2026-03-31 04:52:14|INFO|app.main|request.start id=98135160 method=POST path=/profile
+2026-03-31 04:52:14|INFO|app.api.routes|profile.upsert roles=1 skills=2
+2026-03-31 04:52:14|INFO|app.services.profile_service|profile.saved id=1 roles=1 skills=2 locations=1
+2026-03-31 04:52:14|INFO|app.main|request.complete id=98135160 method=POST path=/profile status=200 duration_ms=23.21
+2026-03-31 04:52:21|INFO|app.main|request.start id=2b0212e0 method=GET path=/jobs
+2026-03-31 04:52:21|INFO|app.api.routes|jobs.list count=0
+2026-03-31 04:52:21|INFO|app.main|request.complete id=2b0212e0 method=GET path=/jobs status=200 duration_ms=5.87
+2026-03-31 04:52:25|INFO|app.main|request.start id=ee5e1681 method=POST path=/search/run
+2026-03-31 04:52:25|INFO|app.api.routes|search.run.start
+2026-03-31 04:52:25|INFO|app.services.search_service|search.run_cycle.start batch_size=5 companies=5
+2026-03-31 04:52:25|INFO|app.services.search_service|search.job.created company=Adobe apply_url=https://www.adobe.com/careers.html/sample-role
+2026-03-31 04:52:25|INFO|app.services.search_service|search.job.created company=Airbnb apply_url=https://careers.airbnb.com/sample-role
+2026-03-31 04:52:25|INFO|app.services.search_service|search.job.created company=Airbus apply_url=https://www.airbus.com/en/careers/sample-role
+2026-03-31 04:52:25|INFO|app.services.search_service|search.job.created company=Akamai Technologies apply_url=https://www.akamai.com/careers/sample-role
+2026-03-31 04:52:25|INFO|app.services.search_service|search.job.created company=Amazon apply_url=https://www.amazon.jobs/sample-role
+2026-03-31 04:52:25|INFO|app.services.search_service|search.run_cycle.complete companies=5 jobs_inserted=5
+2026-03-31 04:52:25|INFO|app.main|request.complete id=ee5e1681 method=POST path=/search/run status=200 duration_ms=35.16
+2026-03-31 04:52:25|INFO|app.main|request.start id=3ac33f49 method=GET path=/jobs
+2026-03-31 04:52:25|INFO|app.api.routes|jobs.list count=5
+2026-03-31 04:52:25|INFO|app.main|request.complete id=3ac33f49 method=GET path=/jobs status=200 duration_ms=6.23
+2026-03-31 04:52:25|INFO|app.main|request.start id=e76d6e79 method=GET path=/jobs/matches
+2026-03-31 04:52:25|INFO|app.api.routes|jobs.matches.start jobs=5
+2026-03-31 04:52:25|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=216
+2026-03-31 04:52:28|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 04:52:28|INFO|app.services.match_service|match.score job_id=1 title=Sample Adobe Role score=41.50 overlap=0 company_priority=9
+2026-03-31 04:52:28|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-03-31 04:52:31|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 04:52:31|INFO|app.services.match_service|match.score job_id=2 title=Sample Airbnb Role score=41.50 overlap=0 company_priority=9
+2026-03-31 04:52:31|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-03-31 04:52:34|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 04:52:34|INFO|app.services.match_service|match.score job_id=3 title=Sample Airbus Role score=41.50 overlap=0 company_priority=9
+2026-03-31 04:52:34|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=230
+2026-03-31 04:52:37|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 04:52:37|INFO|app.services.match_service|match.score job_id=4 title=Sample Akamai Technologies Role score=41.50 overlap=0 company_priority=9
+2026-03-31 04:52:37|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-03-31 04:52:40|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-31 04:52:40|INFO|app.services.match_service|match.score job_id=5 title=Sample Amazon Role score=41.50 overlap=0 company_priority=9
+2026-03-31 04:52:40|INFO|app.api.routes|jobs.matches.complete generated=5
+2026-03-31 04:52:40|INFO|app.main|request.complete id=e76d6e79 method=GET path=/jobs/matches status=200 duration_ms=14752.91
+2026-04-01 02:06:45|INFO|app.main|request.start id=a4239b4b method=GET path=/profile
+2026-04-01 02:06:45|INFO|app.api.routes|profile.fetch found=True
+2026-04-01 02:06:45|INFO|app.main|request.complete id=a4239b4b method=GET path=/profile status=200 duration_ms=5.45
+2026-04-01 02:06:45|INFO|app.main|request.start id=24714b1b method=GET path=/companies
+2026-04-01 02:06:45|INFO|app.services.company_service|company.list count=61
+2026-04-01 02:06:45|INFO|app.api.routes|companies.list count=61
+2026-04-01 02:06:45|INFO|app.main|request.complete id=24714b1b method=GET path=/companies status=200 duration_ms=7.96
+2026-04-01 02:06:45|INFO|app.main|request.start id=4add8188 method=GET path=/jobs
+2026-04-01 02:06:45|INFO|app.api.routes|jobs.list count=5
+2026-04-01 02:06:45|INFO|app.main|request.complete id=4add8188 method=GET path=/jobs status=200 duration_ms=4.79
+2026-04-01 02:06:45|INFO|app.main|request.start id=4ab0b189 method=GET path=/jobs/matches
+2026-04-01 02:06:45|INFO|app.api.routes|jobs.matches.start jobs=5
+2026-04-01 02:06:45|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=216
+2026-04-01 02:06:47|INFO|app.main|request.start id=e06feb65 method=GET path=/companies
+2026-04-01 02:06:47|INFO|app.services.company_service|company.list count=61
+2026-04-01 02:06:47|INFO|app.api.routes|companies.list count=61
+2026-04-01 02:06:47|INFO|app.main|request.complete id=e06feb65 method=GET path=/companies status=200 duration_ms=12.0
+2026-04-01 02:06:47|INFO|app.main|request.start id=304d1efe method=GET path=/jobs
+2026-04-01 02:06:47|INFO|app.api.routes|jobs.list count=5
+2026-04-01 02:06:47|INFO|app.main|request.complete id=304d1efe method=GET path=/jobs status=200 duration_ms=4.88
+2026-04-01 02:06:48|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:06:48|INFO|app.services.match_service|match.score job_id=1 title=Sample Adobe Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:06:48|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-04-01 02:06:51|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:06:51|INFO|app.services.match_service|match.score job_id=2 title=Sample Airbnb Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:06:51|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-04-01 02:06:54|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:06:54|INFO|app.services.match_service|match.score job_id=3 title=Sample Airbus Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:06:54|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=230
+2026-04-01 02:06:57|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:06:57|INFO|app.services.match_service|match.score job_id=4 title=Sample Akamai Technologies Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:06:57|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-04-01 02:07:00|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:07:00|INFO|app.services.match_service|match.score job_id=5 title=Sample Amazon Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:07:00|INFO|app.api.routes|jobs.matches.complete generated=5
+2026-04-01 02:07:00|INFO|app.main|request.complete id=4ab0b189 method=GET path=/jobs/matches status=200 duration_ms=14840.78
+2026-04-01 02:07:00|INFO|app.main|request.start id=0bdbdb21 method=GET path=/jobs/matches
+2026-04-01 02:07:00|INFO|app.api.routes|jobs.matches.start jobs=5
+2026-04-01 02:07:00|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=216
+2026-04-01 02:07:03|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:07:03|INFO|app.services.match_service|match.score job_id=1 title=Sample Adobe Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:07:03|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-04-01 02:07:06|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:07:06|INFO|app.services.match_service|match.score job_id=2 title=Sample Airbnb Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:07:06|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-04-01 02:07:09|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:07:09|INFO|app.services.match_service|match.score job_id=3 title=Sample Airbus Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:07:09|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=230
+2026-04-01 02:07:12|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:07:12|INFO|app.services.match_service|match.score job_id=4 title=Sample Akamai Technologies Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:07:12|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-04-01 02:07:14|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-04-01 02:07:14|INFO|app.services.match_service|match.score job_id=5 title=Sample Amazon Role score=41.50 overlap=0 company_priority=9
+2026-04-01 02:07:14|INFO|app.api.routes|jobs.matches.complete generated=5
+2026-04-01 02:07:14|INFO|app.main|request.complete id=0bdbdb21 method=GET path=/jobs/matches status=200 duration_ms=14650.48
+2026-05-01 23:56:54|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-01 23:56:54|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-05-01 23:56:54|INFO|apscheduler.scheduler|Scheduler started
+2026-05-01 23:56:54|INFO|app.main|scheduler.started interval_hours=12
+2026-05-01 23:56:54|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-05-02 00:01:34|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-02 00:01:34|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-05-02 00:01:34|INFO|apscheduler.scheduler|Scheduler started
+2026-05-02 00:01:34|INFO|app.main|scheduler.started interval_hours=12
+2026-05-02 00:01:34|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-05-02 00:01:44|INFO|app.main|request.start id=054ce758 method=GET path=/
+2026-05-02 00:01:44|INFO|app.main|request.complete id=054ce758 method=GET path=/ status=307 duration_ms=2.88
+2026-05-02 00:01:44|INFO|app.main|request.start id=4fffd077 method=GET path=/health
+2026-05-02 00:01:44|INFO|app.main|request.complete id=4fffd077 method=GET path=/health status=200 duration_ms=1.56
+2026-05-02 00:01:44|INFO|app.main|request.start id=934c9263 method=GET path=/profile
+2026-05-02 00:01:44|INFO|app.api.routes|profile.fetch found=True
+2026-05-02 00:01:44|INFO|app.main|request.complete id=934c9263 method=GET path=/profile status=200 duration_ms=6.96
+2026-05-02 00:01:44|INFO|app.main|request.start id=d637c489 method=GET path=/companies
+2026-05-02 00:01:44|INFO|app.services.company_service|company.list count=61
+2026-05-02 00:01:44|INFO|app.api.routes|companies.list count=61
+2026-05-02 00:01:44|INFO|app.main|request.complete id=d637c489 method=GET path=/companies status=200 duration_ms=6.71
+2026-05-02 00:01:44|INFO|app.main|request.start id=e62b50ec method=GET path=/jobs
+2026-05-02 00:01:44|INFO|app.api.routes|jobs.list count=5
+2026-05-02 00:01:44|INFO|app.main|request.complete id=e62b50ec method=GET path=/jobs status=200 duration_ms=8.0
+2026-05-02 00:01:44|INFO|app.main|request.start id=b62d0e23 method=GET path=/jobs/matches
+2026-05-02 00:01:44|INFO|app.api.routes|jobs.matches.start jobs=5
+2026-05-02 00:01:44|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=216
+2026-05-02 00:01:46|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:01:46|INFO|app.services.match_service|match.score job_id=1 title=Sample Adobe Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:01:46|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-05-02 00:01:49|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:01:49|INFO|app.services.match_service|match.score job_id=2 title=Sample Airbnb Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:01:49|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-05-02 00:01:51|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:01:51|INFO|app.services.match_service|match.score job_id=3 title=Sample Airbus Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:01:51|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=230
+2026-05-02 00:01:53|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:01:53|INFO|app.services.match_service|match.score job_id=4 title=Sample Akamai Technologies Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:01:53|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-05-02 00:01:56|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:01:56|INFO|app.services.match_service|match.score job_id=5 title=Sample Amazon Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:01:56|INFO|app.api.routes|jobs.matches.complete generated=5
+2026-05-02 00:01:56|INFO|app.main|request.complete id=b62d0e23 method=GET path=/jobs/matches status=200 duration_ms=11529.72
+2026-05-02 00:02:02|INFO|app.main|request.start id=0da479d1 method=GET path=/health
+2026-05-02 00:02:02|INFO|app.main|request.complete id=0da479d1 method=GET path=/health status=200 duration_ms=3.15
+2026-05-02 00:02:02|INFO|app.main|request.start id=32fe6e98 method=GET path=/profile
+2026-05-02 00:02:02|INFO|app.api.routes|profile.fetch found=True
+2026-05-02 00:02:02|INFO|app.main|request.complete id=32fe6e98 method=GET path=/profile status=200 duration_ms=5.48
+2026-05-02 00:02:02|INFO|app.main|request.start id=c3d8443d method=GET path=/companies
+2026-05-02 00:02:02|INFO|app.services.company_service|company.list count=61
+2026-05-02 00:02:02|INFO|app.api.routes|companies.list count=61
+2026-05-02 00:02:02|INFO|app.main|request.complete id=c3d8443d method=GET path=/companies status=200 duration_ms=8.62
+2026-05-02 00:02:02|INFO|app.main|request.start id=009335f8 method=GET path=/jobs
+2026-05-02 00:02:02|INFO|app.api.routes|jobs.list count=5
+2026-05-02 00:02:02|INFO|app.main|request.complete id=009335f8 method=GET path=/jobs status=200 duration_ms=6.88
+2026-05-02 00:02:02|INFO|app.main|request.start id=b726aea8 method=GET path=/jobs/matches
+2026-05-02 00:02:02|INFO|app.api.routes|jobs.matches.start jobs=5
+2026-05-02 00:02:02|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=216
+2026-05-02 00:02:05|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:02:05|INFO|app.services.match_service|match.score job_id=1 title=Sample Adobe Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:02:05|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-05-02 00:02:08|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:02:08|INFO|app.services.match_service|match.score job_id=2 title=Sample Airbnb Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:02:08|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-05-02 00:02:11|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:02:11|INFO|app.services.match_service|match.score job_id=3 title=Sample Airbus Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:02:11|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=230
+2026-05-02 00:02:14|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:02:14|INFO|app.services.match_service|match.score job_id=4 title=Sample Akamai Technologies Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:02:14|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=217
+2026-05-02 00:02:17|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-05-02 00:02:17|INFO|app.services.match_service|match.score job_id=5 title=Sample Amazon Role score=41.50 overlap=0 company_priority=9
+2026-05-02 00:02:17|INFO|app.api.routes|jobs.matches.complete generated=5
+2026-05-02 00:02:17|INFO|app.main|request.complete id=b726aea8 method=GET path=/jobs/matches status=200 duration_ms=14762.4

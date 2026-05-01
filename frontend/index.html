@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OC2 Local Job Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/ui/style.css" />
+</head>
+<body>
+  <div class="bg-accent"></div>
+  <div class="bg-glow"></div>
+
+  <header class="hero">
+    <div class="brand">
+      <div class="dot"></div>
+      <div>
+        <p class="eyebrow">Local-first</p>
+        <h1>OC2 Control Room</h1>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <span class="chip" id="scheduler-chip">Scheduler: ...</span>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="dashboard" type="button">Dashboard</button>
+        <button class="tab-btn" data-tab="admin" type="button">Admin</button>
+        <button class="tab-btn" data-tab="logs" type="button">Logs</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="layout tab-panel active" data-panel="dashboard">
+      <section class="card">
+        <div class="card-head">
+          <h2>Status</h2>
+          <small id="status-time"></small>
+        </div>
+        <div class="inline wrap">
+          <button id="btn-run-search" class="btn primary" type="button">Run Search Cycle</button>
+          <button id="btn-refresh-jobs" class="btn ghost sm" type="button">Refresh Jobs</button>
+          <button id="btn-refresh-matches" class="btn ghost sm" type="button">Re-rank</button>
+        </div>
+        <p id="status-text" class="muted">Booting UI...</p>
+      </section>
+
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Jobs</h2>
+        </div>
+        <div class="table">
+          <div class="table-head">
+            <span>Title</span>
+            <span>Company</span>
+            <span>Apply</span>
+          </div>
+          <div id="jobs-rows"></div>
+        </div>
+      </section>
+
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Matches</h2>
+        </div>
+        <div id="matches-list" class="match-grid"></div>
+      </section>
+    </section>
+
+    <section class="layout tab-panel" data-panel="admin">
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Admin Profile</h2>
+          <button id="btn-save-profile" class="btn primary" type="button">Save Profile</button>
+        </div>
+        <form id="profile-form" class="grid-2">
+          <label>
+            Target roles (comma)
+            <input type="text" name="target_roles" placeholder="Product Manager, Product Lead" />
+          </label>
+          <label>
+            Skills (comma)
+            <input type="text" name="skills" placeholder="SQL, APIs, Python" />
+          </label>
+          <label>
+            Preferred locations (comma)
+            <input type="text" name="preferred_locations" placeholder="NYC, Remote" />
+          </label>
+          <label>
+            Remote preference
+            <select name="remote_preference">
+              <option value="remote">Remote</option>
+              <option value="hybrid" selected>Hybrid</option>
+              <option value="onsite">Onsite</option>
+            </select>
+          </label>
+          <label>
+            Salary min
+            <input type="number" name="salary_min" placeholder="100000" />
+          </label>
+          <label>
+            Salary max
+            <input type="number" name="salary_max" placeholder="160000" />
+          </label>
+          <label>
+            Experience (years)
+            <input type="number" step="0.5" name="experience_years" placeholder="5" />
+          </label>
+          <label>
+            Notice period (days)
+            <input type="number" name="notice_period_days" placeholder="30" />
+          </label>
+          <label>
+            Job level
+            <input type="text" name="job_level" placeholder="Senior / IC4" />
+          </label>
+          <div class="helper">
+            Current summary:
+            <p id="profile-summary" class="muted">Not set yet.</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Resume / CV</h2>
+        </div>
+        <p class="muted">Upload a text, markdown, PDF, or doc file. The backend now logs every step of parsing.</p>
+        <input type="file" id="cv-file" accept=".txt,.pdf,.md,.doc,.docx" />
+        <button id="btn-upload-cv" class="btn secondary block" type="button">Upload and Parse</button>
+        <div class="hint" id="cv-status">No upload yet.</div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Companies</h2>
+          <div class="inline">
+            <button id="btn-refresh-companies" class="btn ghost sm" type="button">Refresh</button>
+            <button id="btn-discover-sites" class="btn ghost sm" type="button">Discover URLs</button>
+          </div>
+        </div>
+        <ul id="companies-list" class="list"></ul>
+      </section>
+
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Bulk Add Companies</h2>
+          <button id="btn-bulk-add" class="btn primary" type="button">Add Companies</button>
+        </div>
+        <p class="muted">Use either <code>Name | priority | career_url</code> or plain company names on separate lines. Plain names default to priority 9.</p>
+        <textarea id="bulk-companies" placeholder="Adobe&#10;Microsoft&#10;Oracle | 9 | https://careers.oracle.com/"></textarea>
+      </section>
+    </section>
+
+    <section class="layout tab-panel" data-panel="logs">
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Logs</h2>
+          <div class="inline wrap">
+            <select id="logs-level">
+              <option value="">All Levels</option>
+              <option value="INFO">INFO</option>
+              <option value="WARNING">WARNING</option>
+              <option value="ERROR">ERROR</option>
+            </select>
+            <button id="btn-refresh-logs" class="btn ghost sm" type="button">Refresh Logs</button>
+            <button id="btn-toggle-log-poll" class="btn ghost sm" type="button">Auto Refresh: On</button>
+          </div>
+        </div>
+        <div class="inline wrap log-toolbar">
+          <span class="chip" id="logs-count-chip">0 entries</span>
+          <span class="chip">Server log: <span id="logs-path">logs/oc2.log</span></span>
+        </div>
+        <div id="logs-list" class="logs-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/ui/app.js"></script>
+</body>
+</html>

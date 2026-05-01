@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     ollama_url: str = "http://localhost:11434"
     ollama_model: str = "qwen2.5:3b"
     scheduler_enabled: bool = True
+    log_level: str = "INFO"
+    log_file: str = "logs/oc2.log"
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 

@@ -2,7 +2,10 @@ import json
 
 import httpx
 
+from app.core.logging_config import get_logger
 from app.core.settings import settings
+
+logger = get_logger(__name__)
 
 
 class OllamaClient:
@@ -12,6 +15,7 @@ class OllamaClient:
 
     def chat_json(self, prompt: str, fallback: dict) -> dict:
         try:
+            logger.info("ollama.request.start model=%s prompt_chars=%s", self.model, len(prompt))
             with httpx.Client(timeout=45) as client:
                 response = client.post(
                     f"{self.base_url}/api/generate",
@@ -19,6 +23,9 @@ class OllamaClient:
                 )
                 response.raise_for_status()
                 payload = response.json().get("response", "{}")
-                return json.loads(payload)
-        except Exception:
+                parsed = json.loads(payload)
+                logger.info("ollama.request.success model=%s", self.model)
+                return parsed
+        except Exception as exc:
+            logger.warning("ollama.request.fallback model=%s error=%s", self.model, str(exc))
             return fallback

@@ -1,0 +1,61 @@
+Adobe | 9 | https://careers.adobe.com/us/en
+Airbnb | 9 | https://careers.airbnb.com/
+Airbus | 9 | https://www.airbus.com/en/careers
+Akamai Technologies | 9 | https://www.akamai.com/careers
+Amazon | 9 | https://www.amazon.jobs/
+American Express | 9 | https://www.americanexpress.com/en-us/careers/
+Apple | 9 | https://www.apple.com/careers/
+Atlassian | 9 | https://www.atlassian.com/company/careers
+BNY Mellon | 9 | https://www.bnymellon.com/careers
+Chargebee | 9 | https://www.chargebee.com/careers/
+Citi Bank | 9 | https://jobs.citi.com/
+Coinbase | 9 | https://www.coinbase.com/careers
+DP World | 9 | https://www.dpworld.com/careers
+EPAM Systems | 9 | https://www.epam.com/careers
+Goldman Sachs | 9 | https://www.goldmansachs.com/careers
+Google | 9 | https://careers.google.com/
+Harness | 9 | https://www.harness.io/careers
+IBM | 9 | https://www.ibm.com/careers
+Indeed | 9 | https://www.indeed.jobs/
+InMobi | 9 | https://www.inmobi.com/company/careers
+Intel | 9 | https://jobs.intel.com/
+Intuit | 9 | https://www.intuit.com/careers/
+JPMC (JPMorgan Chase) | 9 | https://careers.jpmorgan.com/
+LinkedIn | 9 | https://careers.linkedin.com/
+Mastercard | 9 | https://careers.mastercard.com/
+McKinsey | 9 | https://www.mckinsey.com/careers
+Media.net | 9 | https://careers.media.net/
+Meta | 9 | https://www.metacareers.com/
+Microsoft | 9 | https://careers.microsoft.com/
+MindTickle | 9 | https://www.mindtickle.com/careers/
+Morgan Stanley | 9 | https://www.morganstanley.com/people-opportunities
+NVIDIA | 9 | https://www.nvidia.com/en-us/about-nvidia/careers/
+Oracle | 9 | https://careers.oracle.com/
+PayPal | 9 | https://www.paypal.com/careers
+Paytm | 9 | https://paytm.com/careers
+PhonePe | 9 | https://www.phonepe.com/careers/
+Philips | 9 | https://www.careers.philips.com/
+Postman | 9 | https://www.postman.com/company/careers/
+Publicis Sapient | 9 | https://careers.publicissapient.com/
+Pure Storage | 9 | https://www.purestorage.com/company/careers.html
+Qualcomm | 9 | https://www.qualcomm.com/company/careers
+SAP Labs | 9 | https://jobs.sap.com/
+Samsung | 9 | https://www.samsung.com/us/careers/
+ServiceNow | 9 | https://careers.servicenow.com/
+Sprinklr | 9 | https://www.sprinklr.com/careers/
+Swiggy | 9 | https://careers.swiggy.com/
+Target | 9 | https://corporate.target.com/careers
+Tekion Corp | 9 | https://tekion.com/careers
+Tesla | 9 | https://www.tesla.com/careers
+ThoughtSpot | 9 | https://www.thoughtspot.com/careers
+Tower Research Capital | 9 | https://www.tower-research.com/careers
+Uber | 9 | https://www.uber.com/careers/
+VMware | 9 | https://careers.vmware.com/
+Walmart | 9 | https://careers.walmart.com/
+Wells Fargo | 9 | https://www.wellsfargo.com/about/careers/
+Western Digital | 9 | https://jobs.westerndigital.com/
+Zeta | 9 | https://www.zeta.tech/careers
+Zoho | 9 | https://www.zoho.com/careers.html
+Idfc | 9 | https://www.idfcfirstbank.com/careers
+Koch | 9 | https://jobs.kochcareers.com/
+Maersk | 9 | https://www.maersk.com/careers
