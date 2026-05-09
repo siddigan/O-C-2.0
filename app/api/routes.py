@@ -10,6 +10,7 @@ from app.models.models import Company, Job, JobMatch, Profile
 from app.schemas.company import CompanyCreate, CompanyRead
 from app.schemas.profile import ProfileCreate, ProfileRead
 from app.services.company_service import CompanyService
+from app.services.email_service import JobReportEmailService
 from app.services.match_service import MatchService
 from app.services.profile_service import ProfileService
 from app.services.search_service import SearchService
@@ -80,20 +81,39 @@ def discover_career_sites(db: Session = Depends(get_db)):
 
 
 @router.post("/search/run")
-def run_search(db: Session = Depends(get_db)):
-    logger.info("search.run.start")
-    return SearchService(db).run_cycle()
+def run_search(
+    batch_size: int | None = Query(default=None, ge=1, le=100),
+    db: Session = Depends(get_db),
+):
+    logger.info("search.run.start batch_size=%s", batch_size)
+    return SearchService(db).run_cycle(batch_size=batch_size)
+
+
+@router.post("/jobs/report/email")
+def send_jobs_report(
+    sample: bool = Query(default=False),
+    db: Session = Depends(get_db),
+):
+    logger.info("jobs.report.email.start sample=%s", sample)
+    service = JobReportEmailService(db)
+    return service.send_sample_email() if sample else service.send_top_jobs_report(limit=15)
 
 
 @router.get("/jobs")
 def list_jobs(db: Session = Depends(get_db)):
-    jobs = db.query(Job, Company).join(Company, Company.id == Job.company_id).all()
+    jobs = (
+        db.query(Job, Company)
+        .join(Company, Company.id == Job.company_id)
+        .order_by(Company.name.asc(), Job.title.asc())
+        .all()
+    )
     logger.info("jobs.list count=%s", len(jobs))
     return [
         {
             "id": job.id,
             "title": job.title,
             "company": company.name,
+            "location": job.location,
             "apply_url": job.apply_url,
         }
         for job, company in jobs

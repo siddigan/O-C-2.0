@@ -29,6 +29,7 @@
     btnSaveProfile: document.getElementById("btn-save-profile"),
     btnUploadCv: document.getElementById("btn-upload-cv"),
     btnRunSearch: document.getElementById("btn-run-search"),
+    btnSendReport: document.getElementById("btn-send-report"),
     btnDiscoverSites: document.getElementById("btn-discover-sites"),
     btnRefreshCompanies: document.getElementById("btn-refresh-companies"),
     btnRefreshJobs: document.getElementById("btn-refresh-jobs"),
@@ -314,11 +315,25 @@
     pushClientLog("INFO", "ui.search", "Running search cycle");
     try {
       const result = await api("/search/run", { method: "POST" });
-      setStatus(`Search complete: ${result.jobs_inserted} jobs inserted from ${result.companies_processed} companies`);
+      const emailText = result.email_report?.sent ? " Email sent." : "";
+      setStatus(
+        `Search complete: ${result.jobs_inserted} jobs inserted from ${result.companies_processed} companies.${emailText}`
+      );
       await loadJobs();
       await loadMatches();
     } finally {
       setButtonBusy(dom.btnRunSearch, false, "Running...");
+    }
+  };
+
+  const sendReport = async () => {
+    setButtonBusy(dom.btnSendReport, true, "Sending...");
+    pushClientLog("INFO", "ui.email", "Sending top jobs email report");
+    try {
+      const result = await api("/jobs/report/email", { method: "POST" });
+      setStatus(result.sent ? `Email sent to ${result.to}` : `Email skipped: ${result.reason}`, result.sent ? "info" : "warn");
+    } finally {
+      setButtonBusy(dom.btnSendReport, false, "Sending...");
     }
   };
 
@@ -435,6 +450,10 @@
 
     dom.btnRunSearch.addEventListener("click", () => {
       runSearch().catch((error) => setStatus(error.message, "warn"));
+    });
+
+    dom.btnSendReport.addEventListener("click", () => {
+      sendReport().catch((error) => setStatus(error.message, "warn"));
     });
 
     dom.btnDiscoverSites.addEventListener("click", () => {

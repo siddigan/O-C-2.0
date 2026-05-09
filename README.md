@@ -23,8 +23,20 @@ uvicorn app.main:app --reload
 - `POST /profile/upload-cv`
 - `GET /companies`
 - `POST /companies/discover-career-sites` (internet-assisted discovery)
-- `POST /search/run`
+- `POST /search/run` (Firecrawl-backed job discovery)
 - `GET /jobs/matches`
+- `POST /jobs/report/email`
+
+## Firecrawl and email setup
+Copy `.env.example` to `.env` and set either `FIRECRAWL_API_KEY` for the current local session or use:
+
+```bash
+python scripts/encrypt_secret.py
+```
+
+Then paste the generated `FIRECRAWL_SECRET_KEY` and `FIRECRAWL_API_KEY_ENCRYPTED` values into `.env`.
+
+Email reports use `JOB_REPORT_TO_EMAIL` as both sender and recipient unless `SMTP_FROM_EMAIL` is set. For Gmail, set `SMTP_USERNAME=2001siddi@gmail.com` and use a Gmail app password as `SMTP_PASSWORD`; normal account passwords are not accepted by Gmail SMTP.
 
 ## Notes
 - Company/search behavior is configuration-driven via JSON, not hardcoded per company logic.

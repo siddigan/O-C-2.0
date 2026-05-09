@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 from sqlalchemy.orm import Session
@@ -56,14 +57,10 @@ class ProfileService:
             "Each list must be an array of strings."
             f"\nResume:\n{extracted_text[:12000]}"
         )
+        fallback = self._parse_cv_locally(extracted_text, profile)
         parsed = self.ollama.chat_json(
             prompt,
-            fallback={
-                "skills": self._load_list(profile.skills),
-                "target_roles": self._load_list(profile.target_roles),
-                "preferred_locations": self._load_list(profile.preferred_locations),
-                "profile_summary": "CV uploaded. Structured parsing fell back to local defaults.",
-            },
+            fallback=fallback,
         )
 
         profile.cv_path = cv_path
@@ -74,7 +71,7 @@ class ProfileService:
         profile.preferred_locations = json.dumps(
             self._normalize_list(parsed.get("preferred_locations"), self._load_list(profile.preferred_locations))
         )
-        profile.profile_summary = parsed.get("profile_summary") or "CV uploaded and processed."
+        profile.profile_summary = parsed.get("profile_summary") or fallback["profile_summary"]
 
         self.db.add(profile)
         self.db.commit()
@@ -96,6 +93,11 @@ class ProfileService:
         if suffix in {".txt", ".md", ".json"}:
             return raw_bytes.decode("utf-8", errors="ignore")
 
+        if suffix == ".pdf":
+            pdf_text = self._extract_pdf_text(path)
+            if len(" ".join(pdf_text.split())) >= 80:
+                return pdf_text
+
         decoded = raw_bytes.decode("utf-8", errors="ignore")
         compact = " ".join(decoded.split())
 
@@ -107,6 +109,93 @@ class ProfileService:
             f"Uploaded resume file named {path.name}. "
             f"Automatic text extraction is limited for {suffix or 'this'} format in the current build."
         )
+
+    def _extract_pdf_text(self, path: Path) -> str:
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            logger.warning("profile.parse_cv.pdf_dependency_missing install=pypdf")
+            return ""
+
+        try:
+            reader = PdfReader(str(path))
+            return "\n".join(page.extract_text() or "" for page in reader.pages)
+        except Exception:
+            logger.exception("profile.parse_cv.pdf_extract_error path=%s", str(path))
+            return ""
+
+    def _parse_cv_locally(self, text: str, profile: Profile) -> dict:
+        existing_skills = self._load_list(profile.skills)
+        existing_roles = self._load_list(profile.target_roles)
+        existing_locations = self._load_list(profile.preferred_locations)
+
+        known_skills = [
+            "Python",
+            "Java",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "FastAPI",
+            "SQL",
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "AWS",
+            "Azure",
+            "Docker",
+            "Kubernetes",
+            "Git",
+            "REST APIs",
+            "Machine Learning",
+            "Data Engineering",
+            "Power BI",
+            "Excel",
+        ]
+        lowered = text.lower()
+        skills = [skill for skill in known_skills if skill.lower() in lowered]
+
+        role_patterns = [
+            "Software Engineer",
+            "Backend Developer",
+            "Frontend Developer",
+            "Full Stack Developer",
+            "Data Engineer",
+            "Data Analyst",
+            "Machine Learning Engineer",
+        ]
+        roles = [role for role in role_patterns if role.lower() in lowered]
+
+        location_patterns = ["Bengaluru", "Bangalore", "Hyderabad", "Pune", "Chennai", "Mumbai", "Gurugram", "Noida", "Remote", "India"]
+        locations = [location for location in location_patterns if re.search(rf"\b{re.escape(location)}\b", text, re.IGNORECASE)]
+
+        summary = self._build_profile_summary(text, skills or existing_skills, roles or existing_roles)
+
+        return {
+            "skills": skills or existing_skills,
+            "target_roles": roles or existing_roles,
+            "preferred_locations": locations or existing_locations,
+            "profile_summary": summary,
+        }
+
+    def _build_profile_summary(self, text: str, skills: list[str], roles: list[str]) -> str:
+        compact = " ".join(text.split())
+        years_match = re.search(r"(\d+(?:\.\d+)?)\+?\s+years?", compact, re.IGNORECASE)
+        years = years_match.group(1) if years_match else None
+        role = roles[0] if roles else "Data Engineer"
+        skill_text = ", ".join(skills[:8]) if skills else "data pipelines, SQL, Python, and cloud data platforms"
+
+        parts = [role]
+        if years:
+            parts.append(f"with {years}+ years of experience")
+        else:
+            parts.append("with experience")
+        parts.append(f"in {skill_text}")
+
+        if "snowflake" in compact.lower() or "aws" in compact.lower():
+            parts.append("building cloud data pipelines and analytics datasets")
+
+        return " ".join(parts) + "."
 
     def _load_list(self, value: str | None) -> list[str]:
         if not value:

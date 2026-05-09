@@ -8,3 +8,5 @@ beautifulsoup4==4.13.3
 trafilatura==2.0.0
 apscheduler==3.11.0
 python-multipart==0.0.20
+cryptography==44.0.2
+pypdf==5.3.1

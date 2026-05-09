@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+.py312/Lib/site-packages/pypdf/
+.py312/Lib/site-packages/pypdf-*.dist-info/
+.env
+.firecrawl/

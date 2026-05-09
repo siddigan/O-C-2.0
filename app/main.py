@@ -10,6 +10,7 @@ from app.api.routes import router
 from app.core.logging_config import get_logger, setup_logging
 from app.core.settings import settings
 from app.db.session import Base, SessionLocal, engine
+from app.services.email_service import JobReportEmailService
 from app.services.search_service import SearchService
 
 setup_logging()
@@ -75,6 +76,23 @@ def scheduled_search() -> None:
 @app.on_event("startup")
 def on_startup() -> None:
     logger.info("app.start title=%s scheduler_enabled=%s", settings.app_name, settings.scheduler_enabled)
+
+
+@app.on_event("shutdown")
+def on_shutdown() -> None:
+    if scheduler.running:
+        scheduler.shutdown(wait=False)
+
+    if not settings.job_report_on_shutdown:
+        logger.info("app.shutdown job_report=disabled")
+        return
+
+    db = SessionLocal()
+    try:
+        logger.info("app.shutdown job_report.start")
+        JobReportEmailService(db).send_top_jobs_report(limit=15)
+    finally:
+        db.close()
 
 
 if settings.scheduler_enabled:
