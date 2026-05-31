@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
 from sqlalchemy.orm import Session
@@ -17,6 +18,123 @@ from app.services.search_service import SearchService
 
 router = APIRouter()
 logger = get_logger(__name__)
+
+FILTERED_JOB_KEYWORDS = ("vice", "lead", "manager", "staff")
+EXPERIENCE_CONTEXT_TERMS = (
+    "experience",
+    "experienced",
+    "qualification",
+    "qualifications",
+    "requirement",
+    "requirements",
+    "minimum",
+    "min.",
+    "at least",
+    "preferred",
+)
+
+
+def _load_json_list(value: str | None) -> list:
+    if not value:
+        return []
+    try:
+        import json
+
+        parsed = json.loads(value)
+    except Exception:
+        return []
+    return parsed if isinstance(parsed, list) else []
+
+
+def _experience_requirement(job: Job) -> dict | None:
+    text = re.sub(r"\s+", " ", f"{job.title or ''} {job.description or ''}".replace("\xa0", " ")).strip()
+    if not text:
+        return None
+
+    patterns = [
+        re.compile(
+            r"\b(?P<min>\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(?P<max>\d+(?:\.\d+)?)\s*(?:\+)?\s*(?:years?|yrs?)\b",
+            re.IGNORECASE,
+        ),
+        re.compile(r"\b(?P<min>\d+(?:\.\d+)?)\s*\+\s*(?:years?|yrs?)\b", re.IGNORECASE),
+        re.compile(
+            r"\b(?:minimum|min\.?|at least)\s+(?P<min>\d+(?:\.\d+)?)\s*(?:\+)?\s*(?:years?|yrs?)\b",
+            re.IGNORECASE,
+        ),
+        re.compile(
+            r"\b(?P<min>\d+(?:\.\d+)?)\s*(?:years?|yrs?)\s+(?:of\s+)?(?:relevant\s+)?experience\b",
+            re.IGNORECASE,
+        ),
+    ]
+
+    candidates: list[dict] = []
+    for pattern in patterns:
+        for match in pattern.finditer(text):
+            start = max(0, match.start() - 120)
+            end = min(len(text), match.end() + 120)
+            snippet = text[start:end].strip()
+            context = snippet.lower()
+            if not any(term in context for term in EXPERIENCE_CONTEXT_TERMS):
+                continue
+
+            min_years = float(match.group("min"))
+            max_years = float(match.group("max")) if "max" in match.groupdict() and match.group("max") else None
+            candidates.append(
+                {
+                    "min_years": min_years,
+                    "max_years": max_years,
+                    "snippet": snippet[:260],
+                    "confidence": "high",
+                    "position": match.start(),
+                }
+            )
+
+    if not candidates:
+        return None
+
+    requirement = sorted(candidates, key=lambda item: item["position"])[0]
+    requirement.pop("position", None)
+    return requirement
+
+
+def _filtered_job_reason(job: Job, profile: Profile | None = None) -> str | None:
+    title = (job.title or "").lower()
+    for keyword in FILTERED_JOB_KEYWORDS:
+        if re.search(rf"\b{re.escape(keyword)}\b", title):
+            return f"Title contains '{keyword}'"
+
+    requirement = _experience_requirement(job)
+    if requirement and profile and profile.experience_years is not None:
+        profile_years = float(profile.experience_years)
+        required_years = float(requirement["min_years"])
+        if required_years > profile_years:
+            required = f"{required_years:g}+ years" if requirement["max_years"] is None else f"{required_years:g}-{requirement['max_years']:g} years"
+            return f"Requires {required}; profile has {profile_years:g} years"
+    return None
+
+
+def _job_payload(job: Job, company: Company, profile: Profile | None = None) -> dict:
+    reason = _filtered_job_reason(job, profile)
+    requirement = _experience_requirement(job)
+    return {
+        "id": job.id,
+        "title": job.title,
+        "company": company.name,
+        "location": job.location,
+        "apply_url": job.apply_url,
+        "filtered_out": bool(reason),
+        "filtered_reason": reason,
+        "experience_required": requirement,
+    }
+
+
+def _job_rows(db: Session) -> list[tuple[Job, Company]]:
+    return (
+        db.query(Job, Company)
+        .join(Company, Company.id == Job.company_id)
+        .order_by(Company.name.asc(), Job.title.asc())
+        .all()
+    )
 
 
 @router.post("/profile", response_model=ProfileRead)
@@ -101,23 +219,24 @@ def send_jobs_report(
 
 @router.get("/jobs")
 def list_jobs(db: Session = Depends(get_db)):
-    jobs = (
-        db.query(Job, Company)
-        .join(Company, Company.id == Job.company_id)
-        .order_by(Company.name.asc(), Job.title.asc())
-        .all()
-    )
-    logger.info("jobs.list count=%s", len(jobs))
-    return [
-        {
-            "id": job.id,
-            "title": job.title,
-            "company": company.name,
-            "location": job.location,
-            "apply_url": job.apply_url,
-        }
-        for job, company in jobs
-    ]
+    profile = db.query(Profile).first()
+    jobs = [_job_payload(job, company, profile) for job, company in _job_rows(db)]
+    visible_jobs = [job for job in jobs if not job["filtered_out"]]
+    logger.info("jobs.list count=%s visible=%s filtered=%s", len(jobs), len(visible_jobs), len(jobs) - len(visible_jobs))
+    return visible_jobs
+
+
+@router.get("/jobs/filtered-out")
+def list_filtered_out_jobs(db: Session = Depends(get_db)):
+    profile = db.query(Profile).first()
+    jobs = [_job_payload(job, company, profile) for job, company in _job_rows(db)]
+    filtered_jobs = [job for job in jobs if job["filtered_out"]]
+    logger.info("jobs.filtered_out.list count=%s keywords=%s", len(filtered_jobs), ",".join(FILTERED_JOB_KEYWORDS))
+    return {
+        "keywords": FILTERED_JOB_KEYWORDS,
+        "profile_experience_years": profile.experience_years if profile else None,
+        "jobs": filtered_jobs,
+    }
 
 
 @router.get("/jobs/matches")
@@ -129,7 +248,7 @@ def rank_jobs(db: Session = Depends(get_db)):
 
     matcher = MatchService()
     output = []
-    jobs = db.query(Job, Company).join(Company, Company.id == Job.company_id).all()
+    jobs = [(job, company) for job, company in _job_rows(db) if not _filtered_job_reason(job, profile)]
 
     logger.info("jobs.matches.start jobs=%s", len(jobs))
 
@@ -160,6 +279,79 @@ def rank_jobs(db: Session = Depends(get_db)):
 
     logger.info("jobs.matches.complete generated=%s", len(output))
     return sorted(output, key=lambda item: item["score"], reverse=True)
+
+
+@router.get("/admin/db")
+def get_database_overview(db: Session = Depends(get_db)):
+    profile = db.query(Profile).first()
+    companies = db.query(Company).order_by(Company.priority.desc(), Company.name.asc()).all()
+    job_rows = _job_rows(db)
+    jobs = [_job_payload(job, company, profile) for job, company in job_rows]
+    matches = (
+        db.query(JobMatch, Job, Company)
+        .join(Job, Job.id == JobMatch.job_id)
+        .join(Company, Company.id == Job.company_id)
+        .order_by(JobMatch.rank_score.desc(), JobMatch.created_at.desc())
+        .limit(50)
+        .all()
+    )
+
+    filtered_jobs = [job for job in jobs if job["filtered_out"]]
+    visible_jobs = [job for job in jobs if not job["filtered_out"]]
+
+    return {
+        "counts": {
+            "profiles": 1 if profile else 0,
+            "companies": len(companies),
+            "enabled_companies": len([company for company in companies if company.enabled]),
+            "jobs": len(jobs),
+            "visible_jobs": len(visible_jobs),
+            "filtered_jobs": len(filtered_jobs),
+            "matches": db.query(JobMatch).count(),
+        },
+        "profile": None
+        if not profile
+        else {
+            "id": profile.id,
+            "target_roles": _load_json_list(profile.target_roles),
+            "skills": _load_json_list(profile.skills),
+            "preferred_locations": _load_json_list(profile.preferred_locations),
+            "remote_preference": profile.remote_preference,
+            "experience_years": profile.experience_years,
+            "notice_period_days": profile.notice_period_days,
+            "job_level": profile.job_level,
+            "cv_path": profile.cv_path,
+            "profile_summary": profile.profile_summary,
+            "updated_at": profile.updated_at.isoformat() if profile.updated_at else None,
+        },
+        "companies": [
+            {
+                "id": company.id,
+                "name": company.name,
+                "priority": company.priority,
+                "enabled": company.enabled,
+                "career_url": company.career_url,
+            }
+            for company in companies[:100]
+        ],
+        "jobs": visible_jobs[:100],
+        "filtered_jobs": filtered_jobs[:100],
+        "matches": [
+            {
+                "id": match.id,
+                "job_id": job.id,
+                "title": job.title,
+                "company": company.name,
+                "score": match.match_score,
+                "fit_level": match.fit_level,
+                "missing_skills": _load_json_list(match.missing_skills),
+                "reason": match.match_reason,
+                "created_at": match.created_at.isoformat() if match.created_at else None,
+            }
+            for match, job, company in matches
+        ],
+        "filter_keywords": FILTERED_JOB_KEYWORDS,
+    }
 
 
 @router.get("/admin/logs")

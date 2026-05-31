@@ -17,7 +17,13 @@
     profileSummary: document.getElementById("profile-summary"),
     companiesList: document.getElementById("companies-list"),
     jobsRows: document.getElementById("jobs-rows"),
+    jobsCountChip: document.getElementById("jobs-count-chip"),
+    filteredJobsRows: document.getElementById("filtered-jobs-rows"),
+    filteredJobsCountChip: document.getElementById("filtered-jobs-count-chip"),
+    filteredJobsNote: document.getElementById("filtered-jobs-note"),
     matchesList: document.getElementById("matches-list"),
+    dbSummary: document.getElementById("db-summary"),
+    dbView: document.getElementById("db-view"),
     bulkCompanies: document.getElementById("bulk-companies"),
     logsList: document.getElementById("logs-list"),
     logsCountChip: document.getElementById("logs-count-chip"),
@@ -35,6 +41,7 @@
     btnRefreshJobs: document.getElementById("btn-refresh-jobs"),
     btnRefreshMatches: document.getElementById("btn-refresh-matches"),
     btnBulkAdd: document.getElementById("btn-bulk-add"),
+    btnRefreshDb: document.getElementById("btn-refresh-db"),
     btnRefreshLogs: document.getElementById("btn-refresh-logs"),
   };
 
@@ -53,6 +60,14 @@
       .replaceAll("'", "&#39;");
 
   const timestampNow = () => new Date().toISOString().slice(0, 19).replace("T", " ");
+
+  const formatList = (items) => (items && items.length ? items.map(escapeHtml).join(", ") : "None");
+
+  const formatDate = (value) => {
+    if (!value) return "Not set";
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
+  };
 
   const pushClientLog = (level, logger, message) => {
     state.clientLogs.push({
@@ -81,6 +96,42 @@
     }
     button.disabled = busy;
     button.textContent = busy ? labelWhenBusy : button.dataset.defaultLabel;
+  };
+
+  const ensureFilteredJobsPanel = () => {
+    if (dom.filteredJobsRows && dom.filteredJobsCountChip && dom.filteredJobsNote) {
+      return true;
+    }
+
+    const dashboard = document.querySelector('[data-panel="dashboard"]');
+    const matchesPanel = dom.matchesList ? dom.matchesList.closest(".card") : null;
+    if (!dashboard) {
+      return false;
+    }
+
+    const panel = document.createElement("section");
+    panel.className = "card span-2";
+    panel.innerHTML = `
+      <div class="card-head">
+        <h2>Filtered Out Jobs</h2>
+        <span class="chip" id="filtered-jobs-count-chip">0 filtered</span>
+      </div>
+      <p class="muted filter-note" id="filtered-jobs-note">Filtered after discovery by seniority keywords and clear experience requirements.</p>
+      <div class="table">
+        <div class="table-head filtered-table-head">
+          <span>Title</span>
+          <span>Company</span>
+          <span>Reason</span>
+          <span>Apply</span>
+        </div>
+        <div id="filtered-jobs-rows"></div>
+      </div>
+    `;
+    dashboard.insertBefore(panel, matchesPanel || null);
+    dom.filteredJobsRows = document.getElementById("filtered-jobs-rows");
+    dom.filteredJobsCountChip = document.getElementById("filtered-jobs-count-chip");
+    dom.filteredJobsNote = document.getElementById("filtered-jobs-note");
+    return Boolean(dom.filteredJobsRows && dom.filteredJobsCountChip && dom.filteredJobsNote);
   };
 
   const api = async (path, { method = "GET", body, headers = {}, isForm = false } = {}) => {
@@ -116,6 +167,9 @@
     state.activeTab = tab;
     dom.tabButtons.forEach((button) => button.classList.toggle("active", button.dataset.tab === tab));
     dom.panels.forEach((panel) => panel.classList.toggle("active", panel.dataset.panel === tab));
+    if (tab === "admin") {
+      loadDbOverview(true).catch((error) => setStatus(error.message, "warn"));
+    }
     if (tab === "logs") {
       loadLogs().catch((error) => setStatus(error.message, "warn"));
     }
@@ -199,6 +253,7 @@
     try {
       const profile = await api("/profile", { method: "POST", body: payload });
       hydrateProfileForm(profile);
+      await loadDbOverview(true);
       setStatus("Profile saved");
     } finally {
       setButtonBusy(dom.btnSaveProfile, false, "Saving...");
@@ -224,6 +279,7 @@
       const updated = await api("/profile/upload-cv", { method: "POST", body: formData, isForm: true });
       hydrateProfileForm(updated);
       await loadProfile(true);
+      await loadDbOverview(true);
       setStatus("CV uploaded and parsed");
       pushClientLog("INFO", "ui.upload", `Upload complete for ${file.name}`);
     } finally {
@@ -297,6 +353,7 @@
       }
       dom.bulkCompanies.value = "";
       await loadCompanies(false);
+      await loadDbOverview(true);
       setStatus(`Added or updated ${companies.length} companies`);
     } finally {
       setButtonBusy(dom.btnBulkAdd, false, "Adding...");
@@ -308,6 +365,7 @@
     const result = await api("/companies/discover-career-sites", { method: "POST" });
     setStatus(`Missing career URLs: ${result.missing_career_urls}`);
     await loadCompanies(true);
+    await loadDbOverview(true);
   };
 
   const runSearch = async () => {
@@ -320,7 +378,9 @@
         `Search complete: ${result.jobs_inserted} jobs inserted from ${result.companies_processed} companies.${emailText}`
       );
       await loadJobs();
+      await loadFilteredJobs();
       await loadMatches();
+      await loadDbOverview(true);
     } finally {
       setButtonBusy(dom.btnRunSearch, false, "Running...");
     }
@@ -340,6 +400,7 @@
   const loadJobs = async () => {
     const jobs = await api("/jobs");
     dom.jobsRows.innerHTML = "";
+    dom.jobsCountChip.textContent = `${jobs.length} visible`;
 
     if (!jobs.length) {
       dom.jobsRows.innerHTML = `<div class="table-row"><span class="muted">No jobs yet</span><span></span><span></span></div>`;
@@ -355,6 +416,42 @@
         <span><a href="${escapeHtml(job.apply_url)}" target="_blank" rel="noreferrer">Open</a></span>
       `;
       dom.jobsRows.appendChild(row);
+    });
+  };
+
+  const loadFilteredJobs = async () => {
+    if (!ensureFilteredJobsPanel()) {
+      pushClientLog("WARNING", "ui.jobs", "Filtered jobs panel is not available in the current page");
+      return;
+    }
+
+    const result = await api("/jobs/filtered-out");
+    const jobs = result.jobs || [];
+    const keywords = result.keywords || [];
+    const profileExperience = result.profile_experience_years;
+    dom.filteredJobsRows.innerHTML = "";
+    dom.filteredJobsCountChip.textContent = `${jobs.length} filtered`;
+    dom.filteredJobsNote.textContent = `Filtered after discovery when the title contains ${keywords.join(", ") || "none"} or when a clear minimum experience requirement is above profile experience${profileExperience == null ? "" : ` (${profileExperience} years)`}.`;
+
+    if (!jobs.length) {
+      dom.filteredJobsRows.innerHTML = `
+        <div class="table-row filtered-table-row">
+          <span class="muted">No filtered jobs</span><span></span><span></span><span></span>
+        </div>
+      `;
+      return;
+    }
+
+    jobs.forEach((job) => {
+      const row = document.createElement("div");
+      row.className = "table-row filtered-table-row";
+      row.innerHTML = `
+        <span>${escapeHtml(job.title)}</span>
+        <span>${escapeHtml(job.company || "Unknown")}</span>
+        <span><span class="badge orange">${escapeHtml(job.filtered_reason || "Filtered")}</span></span>
+        <span><a href="${escapeHtml(job.apply_url)}" target="_blank" rel="noreferrer">Open</a></span>
+      `;
+      dom.filteredJobsRows.appendChild(row);
     });
   };
 
@@ -378,6 +475,122 @@
       `;
       dom.matchesList.appendChild(card);
     });
+  };
+
+  const sectionHtml = (title, content) => `
+    <section class="db-section">
+      <h3>${escapeHtml(title)}</h3>
+      ${content}
+    </section>
+  `;
+
+  const renderDbOverview = (data) => {
+    const counts = data.counts || {};
+    const stats = [
+      ["Profiles", counts.profiles || 0],
+      ["Companies", counts.companies || 0],
+      ["Enabled", counts.enabled_companies || 0],
+      ["Jobs", counts.jobs || 0],
+      ["Visible Jobs", counts.visible_jobs || 0],
+      ["Filtered Jobs", counts.filtered_jobs || 0],
+      ["Matches", counts.matches || 0],
+    ];
+
+    dom.dbSummary.innerHTML = stats
+      .map(([label, value]) => `<div class="stat"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`)
+      .join("");
+
+    const profile = data.profile
+      ? `
+        <div class="details-grid">
+          <div><span>Target roles</span><strong>${formatList(data.profile.target_roles)}</strong></div>
+          <div><span>Skills</span><strong>${formatList(data.profile.skills)}</strong></div>
+          <div><span>Locations</span><strong>${formatList(data.profile.preferred_locations)}</strong></div>
+          <div><span>Remote</span><strong>${escapeHtml(data.profile.remote_preference || "Not set")}</strong></div>
+          <div><span>Experience</span><strong>${escapeHtml(data.profile.experience_years ?? "Not set")}</strong></div>
+          <div><span>Notice</span><strong>${escapeHtml(data.profile.notice_period_days ?? "Not set")}</strong></div>
+          <div><span>Level</span><strong>${escapeHtml(data.profile.job_level || "Not set")}</strong></div>
+          <div><span>CV</span><strong>${escapeHtml(data.profile.cv_path || "Not uploaded")}</strong></div>
+          <div class="wide"><span>Updated</span><strong>${escapeHtml(formatDate(data.profile.updated_at))}</strong></div>
+          <div class="wide"><span>Summary</span><p class="muted">${escapeHtml(data.profile.profile_summary || "No parsed summary yet.")}</p></div>
+        </div>
+      `
+      : `<p class="muted">No profile stored yet.</p>`;
+
+    const companies = (data.companies || [])
+      .slice(0, 25)
+      .map(
+        (company) => `
+          <div class="mini-row">
+            <div>
+              <strong>${escapeHtml(company.name)}</strong>
+              <p class="muted">${escapeHtml(company.career_url || "No career URL")}</p>
+            </div>
+            <span class="badge ${company.enabled ? "green" : "red"}">P${escapeHtml(company.priority)}</span>
+          </div>
+        `
+      )
+      .join("");
+
+    const jobs = (data.jobs || [])
+      .slice(0, 20)
+      .map(
+        (job) => `
+          <div class="mini-row">
+            <div>
+              <strong>${escapeHtml(job.title)}</strong>
+              <p class="muted">${escapeHtml(job.company)}${job.location ? ` - ${escapeHtml(job.location)}` : ""}</p>
+            </div>
+            <a href="${escapeHtml(job.apply_url)}" target="_blank" rel="noreferrer">Open</a>
+          </div>
+        `
+      )
+      .join("");
+
+    const filteredJobs = (data.filtered_jobs || [])
+      .slice(0, 20)
+      .map(
+        (job) => `
+          <div class="mini-row">
+            <div>
+              <strong>${escapeHtml(job.title)}</strong>
+              <p class="muted">${escapeHtml(job.company)} - ${escapeHtml(job.filtered_reason || "Filtered")}</p>
+            </div>
+            <a href="${escapeHtml(job.apply_url)}" target="_blank" rel="noreferrer">Open</a>
+          </div>
+        `
+      )
+      .join("");
+
+    const matches = (data.matches || [])
+      .slice(0, 20)
+      .map(
+        (match) => `
+          <div class="mini-row">
+            <div>
+              <strong>${escapeHtml(match.title)}</strong>
+              <p class="muted">${escapeHtml(match.company)} - ${escapeHtml(match.reason || "No reason")}</p>
+            </div>
+            <span class="score-pill">${Number(match.score || 0).toFixed(1)} ${escapeHtml(match.fit_level || "")}</span>
+          </div>
+        `
+      )
+      .join("");
+
+    dom.dbView.innerHTML =
+      sectionHtml("Profile", profile) +
+      sectionHtml("Companies", companies || `<p class="muted">No companies stored.</p>`) +
+      sectionHtml("Visible Jobs", jobs || `<p class="muted">No visible jobs stored.</p>`) +
+      sectionHtml("Filtered Jobs", filteredJobs || `<p class="muted">No filtered jobs.</p>`) +
+      sectionHtml("Recent Matches", matches || `<p class="muted">No matches generated.</p>`);
+  };
+
+  const loadDbOverview = async (silent = false) => {
+    const data = await api("/admin/db");
+    renderDbOverview(data);
+    if (!silent) {
+      setStatus("Database view refreshed");
+    }
   };
 
   const getFilteredClientLogs = () => {
@@ -465,7 +678,7 @@
     });
 
     dom.btnRefreshJobs.addEventListener("click", () => {
-      loadJobs().catch((error) => setStatus(error.message, "warn"));
+      Promise.all([loadJobs(), loadFilteredJobs(), loadDbOverview(true)]).catch((error) => setStatus(error.message, "warn"));
     });
 
     dom.btnRefreshMatches.addEventListener("click", () => {
@@ -475,6 +688,12 @@
     dom.btnBulkAdd.addEventListener("click", () => {
       bulkAddCompanies().catch((error) => setStatus(error.message, "warn"));
     });
+
+    if (dom.btnRefreshDb) {
+      dom.btnRefreshDb.addEventListener("click", () => {
+        loadDbOverview().catch((error) => setStatus(error.message, "warn"));
+      });
+    }
 
     dom.btnRefreshLogs.addEventListener("click", () => {
       loadLogs().catch((error) => setStatus(error.message, "warn"));
@@ -510,7 +729,9 @@
       await loadProfile(true);
       await loadCompanies(true);
       await loadJobs();
+      await loadFilteredJobs();
       await loadMatches();
+      await loadDbOverview(true);
       setStatus("Ready");
       updateLogPolling();
     } catch (error) {

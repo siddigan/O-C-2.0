@@ -386,6 +386,15 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.025);
 }
 
+.filtered-table-head,
+.filtered-table-row {
+  grid-template-columns: 1.8fr 1fr 1.1fr 0.6fr;
+}
+
+.filter-note {
+  margin-bottom: 12px;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -425,6 +434,102 @@ a {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.04em;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.stat span,
+.details-grid span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.stat strong {
+  font-size: 22px;
+}
+
+.db-view {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.db-section {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.db-section h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.details-grid > div,
+.mini-row {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.details-grid .wide {
+  grid-column: span 2;
+}
+
+.details-grid strong,
+.mini-row strong {
+  overflow-wrap: anywhere;
+}
+
+.mini-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.mini-row p {
+  margin-top: 4px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.score-pill {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(103, 169, 255, 0.16);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 code {
@@ -512,5 +617,16 @@ code {
   .table-head,
   .table-row {
     grid-template-columns: 1.4fr 1fr 0.8fr;
+  }
+
+  .filtered-table-head,
+  .filtered-table-row,
+  .db-view,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-grid .wide {
+    grid-column: span 1;
   }
 }

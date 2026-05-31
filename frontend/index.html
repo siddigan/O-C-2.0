@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/ui/style.css" />
+  <link rel="stylesheet" href="/ui/style.css?v=20260601-filtered-jobs" />
 </head>
 <body>
   <div class="bg-accent"></div>
@@ -19,7 +19,6 @@
     <div class="brand">
       <div class="dot"></div>
       <div>
-        <p class="eyebrow">Local-first</p>
         <h1>OC2 Control Room</h1>
       </div>
     </div>
@@ -52,6 +51,7 @@
       <section class="card span-2">
         <div class="card-head">
           <h2>Jobs</h2>
+          <span class="chip" id="jobs-count-chip">0 visible</span>
         </div>
         <div class="table">
           <div class="table-head">
@@ -60,6 +60,23 @@
             <span>Apply</span>
           </div>
           <div id="jobs-rows"></div>
+        </div>
+      </section>
+
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Filtered Out Jobs</h2>
+          <span class="chip" id="filtered-jobs-count-chip">0 filtered</span>
+        </div>
+        <p class="muted filter-note" id="filtered-jobs-note">Filtered after discovery by seniority keywords and clear experience requirements.</p>
+        <div class="table">
+          <div class="table-head filtered-table-head">
+            <span>Title</span>
+            <span>Company</span>
+            <span>Reason</span>
+            <span>Apply</span>
+          </div>
+          <div id="filtered-jobs-rows"></div>
         </div>
       </section>
 
@@ -154,6 +171,15 @@
         <p class="muted">Use either <code>Name | priority | career_url</code> or plain company names on separate lines. Plain names default to priority 9.</p>
         <textarea id="bulk-companies" placeholder="Adobe&#10;Microsoft&#10;Oracle | 9 | https://careers.oracle.com/"></textarea>
       </section>
+
+      <section class="card span-2">
+        <div class="card-head">
+          <h2>Database Contents</h2>
+          <button id="btn-refresh-db" class="btn ghost sm" type="button">Refresh DB View</button>
+        </div>
+        <div id="db-summary" class="stat-grid"></div>
+        <div id="db-view" class="db-view"></div>
+      </section>
     </section>
 
     <section class="layout tab-panel" data-panel="logs">
@@ -180,6 +206,6 @@
     </section>
   </main>
 
-  <script src="/ui/app.js"></script>
+  <script src="/ui/app.js?v=20260601-filtered-jobs"></script>
 </body>
 </html>
