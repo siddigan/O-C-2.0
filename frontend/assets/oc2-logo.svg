@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGrad" x1="30" y1="30" x2="370" y2="370" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00EEC8"/>
+      <stop offset="48%" stop-color="#1A7AFF"/>
+      <stop offset="100%" stop-color="#9B30FF"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="228" y1="300" x2="312" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF9A3C"/>
+      <stop offset="100%" stop-color="#FFE44D"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#09131F"/>
+      <stop offset="100%" stop-color="#060A14"/>
+    </linearGradient>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.05  0 0 0 0 0.5  0 0 0 0 1  0 0 0 0.65 0" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="tileClip">
+      <rect x="16" y="16" width="368" height="368" rx="72"/>
+    </clipPath>
+  </defs>
+
+  <rect width="400" height="400" fill="#020509"/>
+  <rect x="16" y="16" width="368" height="368" rx="72" fill="url(#bgGrad)"/>
+
+  <g clip-path="url(#tileClip)" opacity="0.45">
+    <circle cx="55" cy="55" r="1.4" fill="#1B3A62"/><circle cx="114" cy="55" r="1.4" fill="#1B3A62"/><circle cx="173" cy="55" r="1.4" fill="#1B3A62"/><circle cx="232" cy="55" r="1.4" fill="#1B3A62"/><circle cx="291" cy="55" r="1.4" fill="#1B3A62"/><circle cx="350" cy="55" r="1.4" fill="#1B3A62"/>
+    <circle cx="55" cy="114" r="1.4" fill="#1B3A62"/><circle cx="114" cy="114" r="1.4" fill="#1B3A62"/><circle cx="173" cy="114" r="1.4" fill="#1B3A62"/><circle cx="232" cy="114" r="1.4" fill="#1B3A62"/><circle cx="291" cy="114" r="1.4" fill="#1B3A62"/><circle cx="350" cy="114" r="1.4" fill="#1B3A62"/>
+    <circle cx="55" cy="173" r="1.4" fill="#1B3A62"/><circle cx="114" cy="173" r="1.4" fill="#1B3A62"/><circle cx="173" cy="173" r="1.4" fill="#1B3A62"/><circle cx="232" cy="173" r="1.4" fill="#1B3A62"/><circle cx="291" cy="173" r="1.4" fill="#1B3A62"/><circle cx="350" cy="173" r="1.4" fill="#1B3A62"/>
+    <circle cx="55" cy="232" r="1.4" fill="#1B3A62"/><circle cx="114" cy="232" r="1.4" fill="#1B3A62"/><circle cx="173" cy="232" r="1.4" fill="#1B3A62"/><circle cx="232" cy="232" r="1.4" fill="#1B3A62"/><circle cx="291" cy="232" r="1.4" fill="#1B3A62"/><circle cx="350" cy="232" r="1.4" fill="#1B3A62"/>
+    <circle cx="55" cy="291" r="1.4" fill="#1B3A62"/><circle cx="114" cy="291" r="1.4" fill="#1B3A62"/><circle cx="173" cy="291" r="1.4" fill="#1B3A62"/><circle cx="232" cy="291" r="1.4" fill="#1B3A62"/><circle cx="291" cy="291" r="1.4" fill="#1B3A62"/><circle cx="350" cy="291" r="1.4" fill="#1B3A62"/>
+    <circle cx="55" cy="350" r="1.4" fill="#1B3A62"/><circle cx="114" cy="350" r="1.4" fill="#1B3A62"/><circle cx="173" cy="350" r="1.4" fill="#1B3A62"/><circle cx="232" cy="350" r="1.4" fill="#1B3A62"/><circle cx="291" cy="350" r="1.4" fill="#1B3A62"/><circle cx="350" cy="350" r="1.4" fill="#1B3A62"/>
+  </g>
+
+  <rect x="20" y="20" width="360" height="360" rx="69" fill="none" stroke="url(#mainGrad)" stroke-width="0.75" opacity="0.2"/>
+
+  <circle cx="134" cy="200" r="70" fill="url(#mainGrad)" filter="url(#glow)"/>
+  <circle cx="134" cy="200" r="44" fill="url(#bgGrad)"/>
+  <path d="M 108 192 L 148 192 L 148 178 L 170 200 L 148 222 L 148 208 L 108 208 Z" fill="url(#mainGrad)"/>
+  <path d="M 300 153 A 57 57 0 1 0 300 247" fill="none" stroke="url(#mainGrad)" stroke-width="26" stroke-linecap="round" filter="url(#glow)"/>
+
+  <text x="228" y="318" font-family="'Courier New', Courier, monospace" font-size="21" font-weight="900" letter-spacing="4" fill="url(#accentGrad)">2.0</text>
+  <circle cx="350" cy="50" r="7" fill="#FFB830" filter="url(#softGlow)"/>
+  <circle cx="334" cy="59" r="3.5" fill="#1A7AFF" opacity="0.65"/>
+  <path d="M 46 336 L 46 354 L 64 354" stroke="#1B3A62" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 350 64 L 350 76" stroke="#FFB830" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+</svg>
