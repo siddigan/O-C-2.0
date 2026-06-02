@@ -5,6 +5,7 @@
     logLevel: "",
     clientLogs: [],
     logTimer: null,
+    expandedJobId: null,
   };
 
   const dom = {
@@ -68,6 +69,9 @@
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
   };
+
+  const referralMessage = (job) =>
+    `Hi, I saw the ${job.title} role at ${job.company} and it looks closely aligned with my Data Engineering background in Python, SQL, AWS, and data pipelines. If you are comfortable, could you refer me or point me to the right recruiter? Thanks.`;
 
   const pushClientLog = (level, logger, message) => {
     state.clientLogs.push({
@@ -408,14 +412,72 @@
     }
 
     jobs.forEach((job) => {
-      const row = document.createElement("div");
-      row.className = "table-row";
-      row.innerHTML = `
-        <span>${escapeHtml(job.title)}</span>
-        <span>${escapeHtml(job.company || "Unknown")}</span>
-        <span><a href="${escapeHtml(job.apply_url)}" target="_blank" rel="noreferrer">Open</a></span>
+      const item = document.createElement("div");
+      item.className = "job-item";
+      const isExpanded = state.expandedJobId === job.id;
+      const experienceText = job.experience_required
+        ? `Detected experience: ${job.experience_required.max_years ? `${job.experience_required.min_years}-${job.experience_required.max_years}` : `${job.experience_required.min_years}+`} years`
+        : "Experience requirement not detected";
+
+      item.innerHTML = `
+        <div class="table-row job-row ${isExpanded ? "expanded" : ""}" role="button" tabindex="0" data-job-id="${escapeHtml(job.id)}">
+          <span>${escapeHtml(job.title)}</span>
+          <span>${escapeHtml(job.company || "Unknown")}</span>
+          <span><a href="${escapeHtml(job.apply_url)}" target="_blank" rel="noreferrer">Open</a></span>
+        </div>
+        <div class="job-detail ${isExpanded ? "open" : ""}">
+          <div class="job-detail-head">
+            <span class="badge blue">${escapeHtml(experienceText)}</span>
+            ${job.location ? `<span class="badge">${escapeHtml(job.location)}</span>` : ""}
+          </div>
+          <label>
+            LinkedIn referral message
+            <textarea readonly>${escapeHtml(referralMessage(job))}</textarea>
+          </label>
+          <div class="inline wrap">
+            <button class="btn ghost sm btn-copy-referral" type="button" data-job-id="${escapeHtml(job.id)}">Copy Message</button>
+            <button class="btn ghost sm btn-filter-job" type="button" data-job-id="${escapeHtml(job.id)}">Move to Filtered Out Jobs</button>
+          </div>
+        </div>
       `;
-      dom.jobsRows.appendChild(row);
+      dom.jobsRows.appendChild(item);
+    });
+
+    dom.jobsRows.querySelectorAll(".job-row").forEach((row) => {
+      row.addEventListener("click", (event) => {
+        if (event.target.closest("a")) return;
+        const jobId = Number(row.dataset.jobId);
+        state.expandedJobId = state.expandedJobId === jobId ? null : jobId;
+        loadJobs().catch((error) => setStatus(error.message, "warn"));
+      });
+      row.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        const jobId = Number(row.dataset.jobId);
+        state.expandedJobId = state.expandedJobId === jobId ? null : jobId;
+        loadJobs().catch((error) => setStatus(error.message, "warn"));
+      });
+    });
+
+    dom.jobsRows.querySelectorAll(".btn-copy-referral").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const job = jobs.find((item) => item.id === Number(button.dataset.jobId));
+        if (!job) return;
+        await navigator.clipboard.writeText(referralMessage(job));
+        setStatus("Referral message copied");
+      });
+    });
+
+    dom.jobsRows.querySelectorAll(".btn-filter-job").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const jobId = Number(button.dataset.jobId);
+        await api(`/jobs/${jobId}/filter`, { method: "POST" });
+        state.expandedJobId = null;
+        await loadJobs();
+        await loadFilteredJobs();
+        await loadDbOverview(true);
+        setStatus("Job moved to filtered list");
+      });
     });
   };
 
@@ -429,9 +491,10 @@
     const jobs = result.jobs || [];
     const keywords = result.keywords || [];
     const profileExperience = result.profile_experience_years;
+    const maxVisibleExperience = result.max_visible_experience_years;
     dom.filteredJobsRows.innerHTML = "";
     dom.filteredJobsCountChip.textContent = `${jobs.length} filtered`;
-    dom.filteredJobsNote.textContent = `Filtered after discovery when the title contains ${keywords.join(", ") || "none"} or when a clear minimum experience requirement is above profile experience${profileExperience == null ? "" : ` (${profileExperience} years)`}.`;
+    dom.filteredJobsNote.textContent = `Filtered after discovery when the title contains ${keywords.join(", ") || "none"} or when a clear minimum experience requirement is above ${maxVisibleExperience ?? 3} years${profileExperience == null ? "" : `; profile has ${profileExperience} years`}.`;
 
     if (!jobs.length) {
       dom.filteredJobsRows.innerHTML = `

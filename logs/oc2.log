@@ -2466,3 +2466,866 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-01 04:23:24|INFO|app.main|request.complete id=9ed6c6aa method=GET path=/jobs/matches status=200 duration_ms=37083.16
 2026-06-01 04:23:24|INFO|app.main|request.start id=1182e56e method=GET path=/admin/db
 2026-06-01 04:23:24|INFO|app.main|request.complete id=1182e56e method=GET path=/admin/db status=200 duration_ms=58.83
+2026-06-01 04:24:51|INFO|app.main|request.start id=61c3d4c2 method=GET path=/admin/db
+2026-06-01 04:24:51|INFO|app.main|request.complete id=61c3d4c2 method=GET path=/admin/db status=200 duration_ms=80.18
+2026-06-02 01:40:26|INFO|app.main|request.start id=fc9c45d6 method=GET path=/companies
+2026-06-02 01:40:27|INFO|app.services.company_service|company.list count=61
+2026-06-02 01:40:27|INFO|app.api.routes|companies.list count=61
+2026-06-02 01:40:27|INFO|app.main|request.complete id=fc9c45d6 method=GET path=/companies status=200 duration_ms=48.07
+2026-06-02 01:40:27|INFO|app.main|request.start id=ff59fd03 method=GET path=/jobs
+2026-06-02 01:40:27|INFO|app.api.routes|jobs.list count=17 visible=8 filtered=9
+2026-06-02 01:40:27|INFO|app.main|request.complete id=ff59fd03 method=GET path=/jobs status=200 duration_ms=30.5
+2026-06-02 01:40:27|INFO|app.main|request.start id=513fd8fb method=GET path=/jobs/filtered-out
+2026-06-02 01:40:27|INFO|app.api.routes|jobs.filtered_out.list count=9 keywords=vice,lead,manager,staff
+2026-06-02 01:40:27|INFO|app.main|request.complete id=513fd8fb method=GET path=/jobs/filtered-out status=200 duration_ms=25.97
+2026-06-02 01:40:27|INFO|app.main|request.start id=175e0497 method=GET path=/jobs/matches
+2026-06-02 01:40:27|INFO|app.api.routes|jobs.matches.start jobs=8
+2026-06-02 01:40:27|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-02 01:40:31|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:40:31|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-02 01:40:31|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 01:40:36|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:40:36|INFO|app.services.match_service|match.score job_id=72 title=Senior Data Engineer in Bangalore, Karnātaka, India score=49.50 overlap=0 company_priority=9
+2026-06-02 01:40:36|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-02 01:40:40|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:40:40|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-02 01:40:40|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-02 01:40:44|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:40:44|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-02 01:40:44|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-02 01:40:51|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:40:51|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 01:40:51|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 01:40:56|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:40:56|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-02 01:40:56|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-02 01:41:01|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:41:01|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 01:41:01|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-02 01:41:06|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:41:06|INFO|app.services.match_service|match.score job_id=69 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-02 01:41:06|INFO|app.api.routes|jobs.matches.complete generated=8
+2026-06-02 01:41:06|INFO|app.main|request.complete id=175e0497 method=GET path=/jobs/matches status=200 duration_ms=39703.01
+2026-06-02 01:41:06|INFO|app.main|request.start id=6d3c4d03 method=GET path=/admin/db
+2026-06-02 01:41:06|INFO|app.main|request.complete id=6d3c4d03 method=GET path=/admin/db status=200 duration_ms=79.84
+2026-06-02 01:42:59|INFO|app.main|request.start id=1c00621e method=POST path=/search/run
+2026-06-02 01:42:59|INFO|app.api.routes|search.run.start batch_size=None
+2026-06-02 01:42:59|INFO|app.services.search_service|search.run_cycle.start batch_size=45 companies=45
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Adobe reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Airbnb reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Airbus reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Akamai Technologies reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Amazon reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=American Express reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Apple reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Atlassian reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=BNY Mellon reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Chargebee reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Citi Bank reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Coinbase reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=DP World reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=EPAM Systems reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Goldman Sachs reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Google reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Harness reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=IBM reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Indeed reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=InMobi reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Intel reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Intuit reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=JPMC (JPMorgan Chase) reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=LinkedIn reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Mastercard reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=McKinsey reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Media.net reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Meta reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Microsoft reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=MindTickle reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Morgan Stanley reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=NVIDIA reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Oracle reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=PayPal reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Paytm reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=PhonePe reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Philips reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Postman reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Publicis Sapient reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Pure Storage reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Qualcomm reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=SAP Labs reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Samsung reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=ServiceNow reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Sprinklr reason=missing_api_key
+2026-06-02 01:42:59|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-02 01:42:59|INFO|app.services.search_service|search.run_cycle.complete companies=45 companies_with_results=0 jobs_inserted=0
+2026-06-02 01:42:59|INFO|app.main|request.complete id=1c00621e method=POST path=/search/run status=200 duration_ms=104.42
+2026-06-02 01:42:59|INFO|app.main|request.start id=12dd655d method=GET path=/jobs
+2026-06-02 01:42:59|INFO|app.api.routes|jobs.list count=17 visible=8 filtered=9
+2026-06-02 01:42:59|INFO|app.main|request.complete id=12dd655d method=GET path=/jobs status=200 duration_ms=49.43
+2026-06-02 01:42:59|INFO|app.main|request.start id=2523b472 method=GET path=/jobs/filtered-out
+2026-06-02 01:42:59|INFO|app.api.routes|jobs.filtered_out.list count=9 keywords=vice,lead,manager,staff
+2026-06-02 01:42:59|INFO|app.main|request.complete id=2523b472 method=GET path=/jobs/filtered-out status=200 duration_ms=56.78
+2026-06-02 01:42:59|INFO|app.main|request.start id=51011152 method=GET path=/jobs/matches
+2026-06-02 01:42:59|INFO|app.api.routes|jobs.matches.start jobs=8
+2026-06-02 01:42:59|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-02 01:43:04|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:04|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-02 01:43:04|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 01:43:09|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:09|INFO|app.services.match_service|match.score job_id=72 title=Senior Data Engineer in Bangalore, Karnātaka, India score=49.50 overlap=0 company_priority=9
+2026-06-02 01:43:09|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-02 01:43:14|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:14|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-02 01:43:14|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-02 01:43:19|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:19|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-02 01:43:19|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-02 01:43:24|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:24|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 01:43:24|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 01:43:29|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:29|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-02 01:43:29|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-02 01:43:34|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:34|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 01:43:34|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-02 01:43:39|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:43:39|INFO|app.services.match_service|match.score job_id=69 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-02 01:43:39|INFO|app.api.routes|jobs.matches.complete generated=8
+2026-06-02 01:43:39|INFO|app.main|request.complete id=51011152 method=GET path=/jobs/matches status=200 duration_ms=39342.65
+2026-06-02 01:43:39|INFO|app.main|request.start id=ac400d3f method=GET path=/admin/db
+2026-06-02 01:43:39|INFO|app.main|request.complete id=ac400d3f method=GET path=/admin/db status=200 duration_ms=27.8
+2026-06-02 01:53:12|INFO|app.main|request.start id=7d0da0e7 method=POST path=/search/run
+2026-06-02 01:53:12|INFO|app.api.routes|search.run.start batch_size=None
+2026-06-02 01:53:12|INFO|app.services.search_service|search.run_cycle.start batch_size=45 companies=45
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Adobe reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Airbnb reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Airbus reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Akamai Technologies reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Amazon reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=American Express reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Apple reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Atlassian reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=BNY Mellon reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Chargebee reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Citi Bank reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Coinbase reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=DP World reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=EPAM Systems reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Goldman Sachs reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Google reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Harness reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=IBM reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Indeed reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=InMobi reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Intel reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Intuit reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=JPMC (JPMorgan Chase) reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=LinkedIn reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Mastercard reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=McKinsey reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Media.net reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Meta reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Microsoft reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=MindTickle reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Morgan Stanley reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=NVIDIA reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Oracle reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=PayPal reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Paytm reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=PhonePe reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Philips reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Postman reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Publicis Sapient reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Pure Storage reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Qualcomm reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=SAP Labs reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Samsung reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=ServiceNow reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Sprinklr reason=missing_api_key
+2026-06-02 01:53:12|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-02 01:53:12|INFO|app.services.search_service|search.run_cycle.complete companies=45 companies_with_results=0 jobs_inserted=0
+2026-06-02 01:53:12|INFO|app.main|request.complete id=7d0da0e7 method=POST path=/search/run status=200 duration_ms=68.01
+2026-06-02 01:53:12|INFO|app.main|request.start id=1078b14b method=GET path=/jobs
+2026-06-02 01:53:12|INFO|app.api.routes|jobs.list count=17 visible=8 filtered=9
+2026-06-02 01:53:12|INFO|app.main|request.complete id=1078b14b method=GET path=/jobs status=200 duration_ms=37.95
+2026-06-02 01:53:12|INFO|app.main|request.start id=9862be92 method=GET path=/jobs/filtered-out
+2026-06-02 01:53:12|INFO|app.api.routes|jobs.filtered_out.list count=9 keywords=vice,lead,manager,staff
+2026-06-02 01:53:12|INFO|app.main|request.complete id=9862be92 method=GET path=/jobs/filtered-out status=200 duration_ms=40.13
+2026-06-02 01:53:12|INFO|app.main|request.start id=e82c11b0 method=GET path=/jobs/matches
+2026-06-02 01:53:12|INFO|app.api.routes|jobs.matches.start jobs=8
+2026-06-02 01:53:12|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-02 01:53:17|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:17|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-02 01:53:17|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 01:53:22|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:22|INFO|app.services.match_service|match.score job_id=72 title=Senior Data Engineer in Bangalore, Karnātaka, India score=49.50 overlap=0 company_priority=9
+2026-06-02 01:53:22|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-02 01:53:27|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:27|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-02 01:53:27|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-02 01:53:32|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:32|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-02 01:53:32|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-02 01:53:37|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:37|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 01:53:37|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 01:53:42|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:42|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-02 01:53:42|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-02 01:53:47|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:47|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 01:53:47|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-02 01:53:52|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 01:53:52|INFO|app.services.match_service|match.score job_id=69 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-02 01:53:52|INFO|app.api.routes|jobs.matches.complete generated=8
+2026-06-02 01:53:52|INFO|app.main|request.complete id=e82c11b0 method=GET path=/jobs/matches status=200 duration_ms=39585.41
+2026-06-02 01:53:52|INFO|app.main|request.start id=99da6188 method=GET path=/admin/db
+2026-06-02 01:53:52|INFO|app.main|request.complete id=99da6188 method=GET path=/admin/db status=200 duration_ms=26.33
+2026-06-02 02:30:34|INFO|app.main|request.start id=21640afa method=GET path=/health
+2026-06-02 02:30:34|INFO|app.main|request.complete id=21640afa method=GET path=/health status=200 duration_ms=7.37
+2026-06-02 02:30:34|INFO|app.main|request.start id=1edc2654 method=GET path=/profile
+2026-06-02 02:30:34|INFO|app.api.routes|profile.fetch found=True
+2026-06-02 02:30:34|INFO|app.main|request.complete id=1edc2654 method=GET path=/profile status=200 duration_ms=11.41
+2026-06-02 02:30:34|INFO|app.main|request.start id=d14b547c method=GET path=/companies
+2026-06-02 02:30:34|INFO|app.services.company_service|company.list count=61
+2026-06-02 02:30:34|INFO|app.api.routes|companies.list count=61
+2026-06-02 02:30:34|INFO|app.main|request.complete id=d14b547c method=GET path=/companies status=200 duration_ms=14.9
+2026-06-02 02:30:34|INFO|app.main|request.start id=d60674ef method=GET path=/jobs
+2026-06-02 02:30:34|INFO|app.api.routes|jobs.list count=17 visible=8 filtered=9
+2026-06-02 02:30:34|INFO|app.main|request.complete id=d60674ef method=GET path=/jobs status=200 duration_ms=61.23
+2026-06-02 02:30:34|INFO|app.main|request.start id=35d8aaf9 method=GET path=/jobs/filtered-out
+2026-06-02 02:30:34|INFO|app.api.routes|jobs.filtered_out.list count=9 keywords=vice,lead,manager,staff
+2026-06-02 02:30:34|INFO|app.main|request.complete id=35d8aaf9 method=GET path=/jobs/filtered-out status=200 duration_ms=61.1
+2026-06-02 02:30:34|INFO|app.main|request.start id=fa1d49c4 method=GET path=/jobs/matches
+2026-06-02 02:30:35|INFO|app.api.routes|jobs.matches.start jobs=8
+2026-06-02 02:30:35|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-02 02:30:40|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:30:40|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-02 02:30:40|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 02:30:45|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:30:45|INFO|app.services.match_service|match.score job_id=72 title=Senior Data Engineer in Bangalore, Karnātaka, India score=49.50 overlap=0 company_priority=9
+2026-06-02 02:30:45|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-02 02:30:50|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:30:50|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-02 02:30:50|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-02 02:30:55|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:30:55|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-02 02:30:55|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-02 02:31:00|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:31:00|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 02:31:00|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-02 02:31:05|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:31:05|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-02 02:31:05|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-02 02:31:10|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:31:10|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-02 02:31:10|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-02 02:31:16|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-02 02:31:16|INFO|app.services.match_service|match.score job_id=69 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-02 02:31:16|INFO|app.api.routes|jobs.matches.complete generated=8
+2026-06-02 02:31:16|INFO|app.main|request.complete id=fa1d49c4 method=GET path=/jobs/matches status=200 duration_ms=41101.66
+2026-06-02 02:31:16|INFO|app.main|request.start id=80ac5d66 method=GET path=/admin/db
+2026-06-02 02:31:16|INFO|app.main|request.complete id=80ac5d66 method=GET path=/admin/db status=200 duration_ms=72.18
+2026-06-02 02:31:37|INFO|app.main|request.start id=698f9df1 method=GET path=/health
+2026-06-02 02:31:37|INFO|app.main|request.complete id=698f9df1 method=GET path=/health status=200 duration_ms=1.95
+2026-06-02 02:32:06|INFO|app.main|request.start id=3a82694f method=POST path=/search/run
+2026-06-02 02:32:06|INFO|app.api.routes|search.run.start batch_size=1
+2026-06-02 02:32:06|INFO|app.services.search_service|search.run_cycle.start batch_size=1 companies=1
+2026-06-02 02:32:06|WARNING|app.services.firecrawl_service|firecrawl.search.skipped company=Adobe reason=missing_api_key
+2026-06-02 02:32:06|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-02 02:32:06|INFO|app.services.search_service|search.run_cycle.complete companies=1 companies_with_results=0 jobs_inserted=0
+2026-06-02 02:32:06|INFO|app.main|request.complete id=3a82694f method=POST path=/search/run status=200 duration_ms=26.86
+2026-06-02 02:32:49|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-02 02:32:49|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-06-02 02:32:49|INFO|apscheduler.scheduler|Scheduler started
+2026-06-02 02:32:49|INFO|app.main|scheduler.started interval_hours=12
+2026-06-02 02:32:49|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-06-02 02:32:51|INFO|app.main|request.start id=37351d99 method=GET path=/health
+2026-06-02 02:32:51|INFO|app.main|request.complete id=37351d99 method=GET path=/health status=200 duration_ms=3.76
+2026-06-02 02:33:18|INFO|app.main|request.start id=63217020 method=POST path=/search/run
+2026-06-02 02:33:18|INFO|app.api.routes|search.run.start batch_size=1
+2026-06-02 02:33:18|INFO|app.services.search_service|search.run_cycle.start batch_size=1 companies=1
+2026-06-02 02:33:18|INFO|app.services.firecrawl_service|firecrawl.search.start company=Adobe query=Adobe careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:adobe.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-02 02:33:38|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=Adobe title=Senior Data Science Engineer in Noida, Uttar Pradesh, India
+2026-06-02 02:33:38|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Adobe url=https://bebee.com/in/jobs/adobe-data-engineer-python-sql-etl-haparz-bengaluru-bangalore--techmap_in_53911393
+2026-06-02 02:33:38|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Adobe url=https://www.glassdoor.co.in/Jobs/Adobe-Data-Engineer-Jobs-EI_IE1090.0,5_KO6,19.htm
+2026-06-02 02:33:38|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Adobe url=https://jobs.techbiz.global/o/data-engineer-adobe-aep
+2026-06-02 02:33:38|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Adobe results=8 jobs=2 credits=9
+2026-06-02 02:33:38|INFO|app.services.search_service|search.job.skipped company=Adobe reason=existing_job url=https://careers.adobe.com/us/en/job/R166484/Data-engineer
+2026-06-02 02:33:38|INFO|app.services.search_service|search.job.created company=Adobe title=Sr. Computer Scientist (Data Platform Engineer) apply_url=https://careers.adobe.com/us/en/job/R166812/Sr-Computer-Scientist-Data-Platform-Engineer
+2026-06-02 02:33:38|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-02 02:33:38|INFO|app.services.search_service|search.run_cycle.complete companies=1 companies_with_results=1 jobs_inserted=1
+2026-06-02 02:33:38|INFO|app.main|request.complete id=63217020 method=POST path=/search/run status=200 duration_ms=20158.73
+2026-06-02 23:12:38|WARNING|apscheduler.executors.default|Run time of job "scheduled_search (trigger: interval[12:00:00], next run at: 2026-06-03 02:32:49 IST)" was missed by 8:39:48.414275
+2026-06-03 00:11:46|INFO|app.main|request.start id=eee8e685 method=GET path=/health
+2026-06-03 00:11:46|INFO|app.main|request.complete id=eee8e685 method=GET path=/health status=200 duration_ms=9.28
+2026-06-03 00:11:46|INFO|app.main|request.start id=f9bc55f1 method=GET path=/profile
+2026-06-03 00:11:46|INFO|app.api.routes|profile.fetch found=True
+2026-06-03 00:11:46|INFO|app.main|request.complete id=f9bc55f1 method=GET path=/profile status=200 duration_ms=24.49
+2026-06-03 00:11:46|INFO|app.main|request.start id=22ad0a50 method=GET path=/companies
+2026-06-03 00:11:46|INFO|app.services.company_service|company.list count=61
+2026-06-03 00:11:46|INFO|app.api.routes|companies.list count=61
+2026-06-03 00:11:46|INFO|app.main|request.complete id=22ad0a50 method=GET path=/companies status=200 duration_ms=10.22
+2026-06-03 00:11:46|INFO|app.main|request.start id=832b1639 method=GET path=/jobs
+2026-06-03 00:11:46|INFO|app.api.routes|jobs.list count=18 visible=9 filtered=9
+2026-06-03 00:11:46|INFO|app.main|request.complete id=832b1639 method=GET path=/jobs status=200 duration_ms=21.88
+2026-06-03 00:11:46|INFO|app.main|request.start id=4c85b642 method=GET path=/jobs/filtered-out
+2026-06-03 00:11:46|INFO|app.api.routes|jobs.filtered_out.list count=9 keywords=vice,lead,manager,staff
+2026-06-03 00:11:46|INFO|app.main|request.complete id=4c85b642 method=GET path=/jobs/filtered-out status=200 duration_ms=22.52
+2026-06-03 00:11:46|INFO|app.main|request.start id=9868f3e9 method=GET path=/jobs/matches
+2026-06-03 00:11:46|INFO|app.api.routes|jobs.matches.start jobs=9
+2026-06-03 00:11:46|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-03 00:11:51|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:11:51|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-03 00:11:51|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-03 00:11:55|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:11:55|INFO|app.services.match_service|match.score job_id=72 title=Senior Data Engineer in Bangalore, Karnātaka, India score=49.50 overlap=0 company_priority=9
+2026-06-03 00:11:55|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2104
+2026-06-03 00:11:59|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:11:59|INFO|app.services.match_service|match.score job_id=81 title=Sr. Computer Scientist (Data Platform Engineer) score=41.50 overlap=0 company_priority=9
+2026-06-03 00:11:59|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-03 00:12:03|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:12:03|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-03 00:12:03|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-03 00:12:08|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:12:08|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-03 00:12:08|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-03 00:12:12|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:12:12|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 00:12:12|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-03 00:12:16|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:12:16|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-03 00:12:16|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-03 00:12:20|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:12:20|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 00:12:20|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-03 00:12:25|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:12:25|INFO|app.services.match_service|match.score job_id=69 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-03 00:12:25|INFO|app.api.routes|jobs.matches.complete generated=9
+2026-06-03 00:12:25|INFO|app.main|request.complete id=9868f3e9 method=GET path=/jobs/matches status=200 duration_ms=38356.84
+2026-06-03 00:12:25|INFO|app.main|request.start id=329e3fd5 method=GET path=/admin/db
+2026-06-03 00:12:25|INFO|app.main|request.complete id=329e3fd5 method=GET path=/admin/db status=200 duration_ms=26.12
+2026-06-03 00:17:16|INFO|app.main|request.start id=3d110ee4 method=POST path=/search/run
+2026-06-03 00:17:16|INFO|app.api.routes|search.run.start batch_size=None
+2026-06-03 00:17:16|INFO|app.services.search_service|search.run_cycle.start batch_size=45 companies=45
+2026-06-03 00:17:16|INFO|app.services.firecrawl_service|firecrawl.search.start company=Adobe query=Adobe careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:adobe.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:17:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=Adobe title=Senior Data Science Engineer in Noida, Uttar Pradesh, India
+2026-06-03 00:17:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Adobe url=https://bebee.com/in/jobs/adobe-data-engineer-python-sql-etl-haparz-bengaluru-bangalore--techmap_in_53911393
+2026-06-03 00:17:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Adobe url=https://www.glassdoor.co.in/Jobs/Adobe-Data-Engineer-Jobs-EI_IE1090.0,5_KO6,19.htm
+2026-06-03 00:17:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Adobe url=https://jobs.techbiz.global/o/data-engineer-adobe-aep
+2026-06-03 00:17:18|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Adobe results=8 jobs=2 credits=9
+2026-06-03 00:17:18|INFO|app.services.search_service|search.job.skipped company=Adobe reason=existing_job url=https://careers.adobe.com/us/en/job/R166484/Data-engineer
+2026-06-03 00:17:18|INFO|app.services.search_service|search.job.skipped company=Adobe reason=existing_job url=https://careers.adobe.com/us/en/job/R166812/Sr-Computer-Scientist-Data-Platform-Engineer
+2026-06-03 00:17:18|INFO|app.services.firecrawl_service|firecrawl.search.start company=Airbnb query=Airbnb careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.airbnb.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:17:27|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Airbnb url=https://www.glassdoor.co.in/Job/india-data-engineer-airbnb-jobs-SRCH_IL.0,5_IN115_KO6,26.htm
+2026-06-03 00:17:27|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Airbnb url=https://www.remoterocketship.com/company/airbnb/jobs/senior-data-engineer-payments-india-remote/
+2026-06-03 00:17:27|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Airbnb results=8 jobs=2 credits=9
+2026-06-03 00:17:27|INFO|app.services.search_service|search.job.skipped company=Airbnb reason=existing_job url=https://careers.airbnb.com/positions/7256787/
+2026-06-03 00:17:27|INFO|app.services.search_service|search.job.created company=Airbnb title=Senior Data Engineer, BizTech apply_url=https://careers.airbnb.com/positions/7640881/
+2026-06-03 00:17:27|INFO|app.services.firecrawl_service|firecrawl.search.start company=Airbus query=Airbus careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:airbus.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:17:42|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Airbus url=https://ag.wd3.myworkdayjobs.com/en-US/Airbus/job/Full-Stack-Data-Engineer---Methods---Tools_JR10411607-1
+2026-06-03 00:17:42|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Airbus url=https://builtin.com/job/data-engineer-vcr-data-ai-team/4312563
+2026-06-03 00:17:42|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Airbus url=https://bebee.com/in/jobs/lead-skywise-data-engineer-airbus-group-india-pvt-ltd-bengaluru--techmap_in_1547438457
+2026-06-03 00:17:42|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Airbus url=https://flexa.careers/jobs/airbus-software-engineer-69fcf31540d7719e5d850613
+2026-06-03 00:17:42|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Airbus results=8 jobs=0 credits=9
+2026-06-03 00:17:42|INFO|app.services.firecrawl_service|firecrawl.search.start company=Akamai Technologies query=Akamai Technologies careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:akamai.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:17:56|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Akamai Technologies url=https://builtin.com/job/senior-data-engineer/9313699
+2026-06-03 00:17:56|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Akamai Technologies url=https://bebee.com/in/jobs/senior-data-engineer-akamai-technologies-bengaluru-bangalore--techmap_in_52952110
+2026-06-03 00:17:56|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Akamai Technologies results=8 jobs=0 credits=8
+2026-06-03 00:17:56|INFO|app.services.firecrawl_service|firecrawl.search.start company=Amazon query=Amazon careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:amazon.jobs -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:18:10|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Amazon url=https://bebee.com/in/jobs/data-engineer-i-intl-seller-growth-amazoncom-bengaluru-karnataka--theirstack-647424669
+2026-06-03 00:18:10|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Amazon url=https://relx.wd3.myworkdayjobs.com/en-US/ReedExhibitions/job/Data-Engineer-III_R110699
+2026-06-03 00:18:10|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Amazon results=8 jobs=0 credits=9
+2026-06-03 00:18:10|INFO|app.services.firecrawl_service|firecrawl.search.start company=American Express query=American Express careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:americanexpress.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=American Express title=Senior Data Engineer I - Bigdata, GCP, GenAI
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=American Express title=Senior Data Engineer I
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=American Express title=Data Engineer - Next Generation Big Data
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=American Express url=https://bebee.com/in/jobs/data-engineer-american-express-global-business-travel-gurgaon--techmap_in_1806707465
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=American Express url=https://unstop.com/jobs/data-engineer-ii-american-express-1531682/amp
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.complete company=American Express results=8 jobs=0 credits=9
+2026-06-03 00:18:25|INFO|app.services.firecrawl_service|firecrawl.search.start company=Apple query=Apple careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:apple.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:18:34|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Apple url=https://www.iitjobs.com/job/sr-data-engineer-databricks-sql-usa-308466
+2026-06-03 00:18:34|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Apple results=8 jobs=2 credits=8
+2026-06-03 00:18:34|INFO|app.services.search_service|search.job.created company=Apple title=Cloud Data Engineer - Jobs at Apple (IN) apply_url=https://jobs.apple.com/en-in/details/200635558-1052/cloud-data-engineer?team=CORSV
+2026-06-03 00:18:34|INFO|app.services.search_service|search.job.created company=Apple title=Data Engineer - Jobs at Apple (IN) apply_url=https://jobs.apple.com/en-in/details/200643156-0836/data-engineer
+2026-06-03 00:18:34|INFO|app.services.firecrawl_service|firecrawl.search.start company=Atlassian query=Atlassian careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:atlassian.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:18:49|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Atlassian url=https://careers-apac-atlassian.icims.com/jobs/25150/principal-data-engineer/job
+2026-06-03 00:18:49|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Atlassian url=https://careers.mheducation.com/jobs/6749?lang=en-us
+2026-06-03 00:18:49|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Atlassian url=https://careers.amgen.com/en/job/hyderabad/bi-data-engineer-precision-medicine-team/87/92371468704
+2026-06-03 00:18:49|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Atlassian url=https://jobs.accel.com/companies/atlassian/jobs/46085879-data-engineer
+2026-06-03 00:18:49|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Atlassian results=8 jobs=0 credits=10
+2026-06-03 00:18:49|INFO|app.services.firecrawl_service|firecrawl.search.start company=BNY Mellon query=BNY Mellon careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:bnymellon.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:19:06|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=BNY Mellon url=https://eofe.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BNY-Careers/job/76609/
+2026-06-03 00:19:06|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=BNY Mellon url=https://www.jobaaj.com/job/bny-mellon-data-analytics-engineer-chennai-1-to-2-years-805454
+2026-06-03 00:19:06|INFO|app.services.firecrawl_service|firecrawl.search.complete company=BNY Mellon results=8 jobs=0 credits=8
+2026-06-03 00:19:06|INFO|app.services.firecrawl_service|firecrawl.search.start company=Chargebee query=Chargebee careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:chargebee.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:19:14|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Chargebee url=https://bebee.com/in/jobs/data-engineer-chargebee-chennai--jobssear-3907875889
+2026-06-03 00:19:14|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Chargebee url=https://www.shine.com/jobs/it-data-architect/chargebee/19070747
+2026-06-03 00:19:14|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Chargebee results=8 jobs=0 credits=9
+2026-06-03 00:19:14|INFO|app.services.firecrawl_service|firecrawl.search.start company=Citi Bank query=Citi Bank careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:jobs.citi.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:19:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Citi Bank url=https://apna.co/job/chennai/data-engineer-big-data-python-databricks-assistant-1183543224
+2026-06-03 00:19:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Citi Bank url=https://www.glassdoor.co.in/Jobs/Citi-data-engineer-Jobs-EI_IE8843.0,4_KO5,18.htm
+2026-06-03 00:19:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Citi Bank url=https://insider-jobs.com/job/69959522933b80f942c594bd/data-engineer-big-data-cloud-aws-databricks-assistant-vice-president-c12-pune-citigroup-sin-ubicacion
+2026-06-03 00:19:21|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Citi Bank results=8 jobs=2 credits=9
+2026-06-03 00:19:21|INFO|app.services.search_service|search.job.skipped company=Citi Bank reason=existing_job url=https://jobs.citi.com/job/pune/data-engineer-python/287/93991431952
+2026-06-03 00:19:21|INFO|app.services.search_service|search.job.skipped company=Citi Bank reason=existing_job url=https://jobs.citi.com/job/chennai/data-engineer-big-data-python-databricks-assistant-vice-president/287/94021814192
+2026-06-03 00:19:21|INFO|app.services.firecrawl_service|firecrawl.search.start company=Coinbase query=Coinbase careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:coinbase.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:19:29|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Coinbase url=https://resuminder.com/jobs/24394-staff-analytics-engineer-at-coinbase-careers-page
+2026-06-03 00:19:29|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Coinbase url=https://builtin.com/job/analytics-engineer/9147219
+2026-06-03 00:19:29|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Coinbase url=https://jobsolv.com/jobs/at/coinbase
+2026-06-03 00:19:29|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Coinbase url=https://www.themuse.com/jobs/coinbase/senior-analytics-engineer-916848
+2026-06-03 00:19:29|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Coinbase results=8 jobs=0 credits=9
+2026-06-03 00:19:29|INFO|app.services.firecrawl_service|firecrawl.search.start company=DP World query=DP World careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:dpworld.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:19:44|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=DP World url=https://careers.amgen.com/en/job/hyderabad/associate-data-engineer/87/91575448848
+2026-06-03 00:19:44|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=DP World url=https://bebee.com/in/jobs/specialist-senior-specialist-data-engineer-azure-databricks-dp-world-global-service-centre-navi-mumb--theirstack-663100269
+2026-06-03 00:19:44|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=DP World url=https://www.shine.com/jobs/specialist-senior-specialist-data-engineer-azure-databricks/dp-world-global-service-centre/18955963
+2026-06-03 00:19:44|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=DP World url=https://careers.moodys.com/en/job/lohchap/senior-data-engineer/49841/94725132320
+2026-06-03 00:19:44|INFO|app.services.firecrawl_service|firecrawl.search.complete company=DP World results=8 jobs=0 credits=9
+2026-06-03 00:19:44|INFO|app.services.firecrawl_service|firecrawl.search.start company=EPAM Systems query=EPAM Systems careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:epam.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:19:59|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=EPAM Systems url=https://bebee.com/in/jobs/gcp-data-engineer-epam-systems-bengaluru-chennai-coimbatore--bs-in-8d1aa4ae-e8cf-440f-955e-e1fa333b217c
+2026-06-03 00:19:59|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=EPAM Systems url=https://www.glassdoor.co.in/Jobs/EPAM-Systems-Lead-Data-Engineer-India-Jobs-EI_IE15544.0,12_KO13,31_IL.32,37_IN115.htm
+2026-06-03 00:19:59|INFO|app.services.firecrawl_service|firecrawl.search.complete company=EPAM Systems results=8 jobs=0 credits=8
+2026-06-03 00:19:59|INFO|app.services.firecrawl_service|firecrawl.search.start company=Goldman Sachs query=Goldman Sachs careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:goldmansachs.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Goldman Sachs url=https://bebee.com/in/jobs/data-engineer-analyst-goldman-sachs-services-pvt-ltd-bengaluru--techmap_in_1764259476
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Goldman Sachs url=https://nodeflair.com/jobs/goldman-sachs-engineering-data-engineering-sre-associate-software-engineering-bengaluru-470665
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Goldman Sachs url=https://consider.com/boards/vc/singapore-global-network/jobs/goldman-sachs?skills=Apache+Spark
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Goldman Sachs url=https://hdpc.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/job/168977
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Goldman Sachs url=https://apna.co/job/hyderabad/software-engineering-data-lakehouse-and-ai-data-pl-1956378325
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Goldman Sachs results=8 jobs=0 credits=9
+2026-06-03 00:20:07|INFO|app.services.firecrawl_service|firecrawl.search.start company=Google query=Google careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.google.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:20:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Google url=https://bebee.com/in/jobs/data-engineer-postgresql-gke-python-ltimindtree--theirstack-672787102
+2026-06-03 00:20:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Google url=https://www.careers.ford.com/job/dearborn/data-engineer/48560/90530961824
+2026-06-03 00:20:18|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Google results=8 jobs=2 credits=9
+2026-06-03 00:20:18|INFO|app.services.search_service|search.job.created company=Google title=Data Engineer, Play Data Science and Analytics — Google Careers apply_url=https://careers.google.com/jobs/results/125796310799262406-data-engineer
+2026-06-03 00:20:18|INFO|app.services.search_service|search.job.created company=Google title=Cloud Data Engineer, (English, Spanish) — Google Careers apply_url=https://www.google.com/jobs/results/106744907367883462-cloud-data-engineer
+2026-06-03 00:20:18|INFO|app.services.firecrawl_service|firecrawl.search.start company=Harness query=Harness careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:harness.io -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Harness url=https://jobs.experian.com/job/associate-data-engineer-in-hyderabad-india-jid-2674
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Harness url=https://careers.amgen.com/en/job/hyderabad/data-engineer/87/95284657472
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Harness url=https://www.turing.com/jobs/data-engineer-jobs-in-hyderabad
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Harness url=https://ag.wd3.myworkdayjobs.com/en-US/Airbus/job/Full-Stack-Data-Engineer---Methods---Tools_JR10411607-1
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Harness url=https://search.jobs.barclays/job/pune/tableau-sql-etl-developer/13015/92846717760
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Harness url=https://jobs.citi.com/job/pune/senior-data-engineer-pune/287/95890801600
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Harness results=8 jobs=0 credits=9
+2026-06-03 00:20:24|INFO|app.services.firecrawl_service|firecrawl.search.start company=IBM query=IBM careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:ibm.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:20:32|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=IBM url=https://en.wizbii.com/company/ibm/job/data-engineer-big-data-aws-8
+2026-06-03 00:20:32|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=IBM url=https://www.ambitionbox.com/jobs/data-engineer-jobs-in-ibm-cmpdesig
+2026-06-03 00:20:32|INFO|app.services.firecrawl_service|firecrawl.search.complete company=IBM results=8 jobs=0 credits=13
+2026-06-03 00:20:32|INFO|app.services.firecrawl_service|firecrawl.search.start company=Indeed query=Indeed careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:indeed.jobs -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:20:49|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Indeed url=https://hoonartek.sensehq.com/careers/jobs/55145
+2026-06-03 00:20:49|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Indeed url=https://join.agileengine.com/job/senior-data-engineer-indeed/
+2026-06-03 00:20:49|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Indeed results=8 jobs=0 credits=10
+2026-06-03 00:20:49|INFO|app.services.firecrawl_service|firecrawl.search.start company=InMobi query=InMobi careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:inmobi.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:21:00|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=InMobi url=https://www.jobaaj.com/job/inmobi-sde-iii-data-engineer-bengaluru-karnataka-india-5-to-7-years-288061
+2026-06-03 00:21:00|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=InMobi url=https://www.ambitionbox.com/jobs/data-engineer-in-billions-united-naukri_250725500797-jdp
+2026-06-03 00:21:00|INFO|app.services.firecrawl_service|firecrawl.search.complete company=InMobi results=8 jobs=0 credits=13
+2026-06-03 00:21:00|INFO|app.services.firecrawl_service|firecrawl.search.start company=Intel query=Intel careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:jobs.intel.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:21:12|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Intel url=https://builtin.com/job/senior-big-data-engineer/4187236
+2026-06-03 00:21:12|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Intel url=https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/Senior-Security-Data-Engineer_RP1036736
+2026-06-03 00:21:12|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Intel url=https://netlink.com/jobs/data-engineer/
+2026-06-03 00:21:12|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Intel results=8 jobs=0 credits=8
+2026-06-03 00:21:12|INFO|app.services.firecrawl_service|firecrawl.search.start company=Intuit query=Intuit careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:intuit.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:21:28|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Intuit url=https://jobs.anitab.org/companies/intuit/jobs/53679288-data-engineer-2
+2026-06-03 00:21:28|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Intuit url=https://bebee.com/in/jobs/staff-data-engineer-intuit--talent-5d1267734979
+2026-06-03 00:21:28|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Intuit results=8 jobs=0 credits=10
+2026-06-03 00:21:28|INFO|app.services.firecrawl_service|firecrawl.search.start company=JPMC (JPMorgan Chase) query=JPMC (JPMorgan Chase) careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.jpmorgan.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:21:41|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=JPMC (JPMorgan Chase) url=https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210703478/
+2026-06-03 00:21:41|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=JPMC (JPMorgan Chase) url=https://bebee.com/in/jobs/data-engineer-iii-spark-python-data-bricks-jp-morgan-chase-co-bengaluru-bangalore--techmap_in_51329849
+2026-06-03 00:21:41|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=JPMC (JPMorgan Chase) url=https://www.cryptojobs.com/job/data-engineer-ii-7183
+2026-06-03 00:21:41|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=JPMC (JPMorgan Chase) url=https://careers.atmae.org/job/data-engineer-iii/84127561/
+2026-06-03 00:21:41|INFO|app.services.firecrawl_service|firecrawl.search.complete company=JPMC (JPMorgan Chase) results=8 jobs=0 credits=9
+2026-06-03 00:21:41|INFO|app.services.firecrawl_service|firecrawl.search.start company=LinkedIn query=LinkedIn careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.linkedin.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:21:48|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=LinkedIn url=https://careers.unitedhealthgroup.com/job/chennai/senior-data-engineer-unix-data-stage-python-data-warehouse-cloud/34088/94434247984
+2026-06-03 00:21:48|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=LinkedIn url=https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Consulting-AI-Data-Python-Data-Engineer-LI/322086
+2026-06-03 00:21:48|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=LinkedIn url=https://careers.mheducation.com/jobs/6749?lang=en-us
+2026-06-03 00:21:48|INFO|app.services.firecrawl_service|firecrawl.search.complete company=LinkedIn results=8 jobs=0 credits=7
+2026-06-03 00:21:48|INFO|app.services.firecrawl_service|firecrawl.search.start company=Mastercard query=Mastercard careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.mastercard.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:21:57|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=Mastercard title=Senior Data Engineer (Apache Spark, NiFi, SQL)
+2026-06-03 00:21:57|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Mastercard url=https://www.jobzmall.com/mastercard/job/lead-cloud-data-engineer-aws-spark
+2026-06-03 00:21:57|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Mastercard results=8 jobs=3 credits=10
+2026-06-03 00:21:57|INFO|app.services.search_service|search.job.created company=Mastercard title=Sr. Data Engineer (Big Data & Analytics Engineering) apply_url=https://careers.mastercard.com/us/en/job/R-276688/Sr-Data-Engineer-Big-Data-Analytics-Engineering
+2026-06-03 00:21:57|INFO|app.services.search_service|search.job.created company=Mastercard title=Data Engineer I in Pune, India, 411006 | AI & Data at Mastercard apply_url=https://careers.mastercard.com/us/en/job/R-277992/Data-Engineer-I
+2026-06-03 00:21:57|INFO|app.services.search_service|search.job.created company=Mastercard title=Data Engineer II in Pune, India, 411006 | AI & Data at Mastercard apply_url=https://careers.mastercard.com/us/en/job/R-276353/Data-Engineer-II
+2026-06-03 00:21:57|INFO|app.services.firecrawl_service|firecrawl.search.start company=McKinsey query=McKinsey careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:mckinsey.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:22:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=McKinsey url=https://www.jobaaj.com/job/mckinsey-big-data-engineer-delhi-ncr-2-to-4-years-779767
+2026-06-03 00:22:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=McKinsey url=https://ats.rippling.com/pt-BR/alaan-careers/jobs/089df7a9-ecc6-43dd-8db3-cded680492ce
+2026-06-03 00:22:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=McKinsey url=https://www.shine.com/jobs/big-data-engineer/mckinsey/19020390
+2026-06-03 00:22:07|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=McKinsey url=https://unstop.com/jobs/data-engineer-performance-lens-mckinsey-and-company-190308/amp
+2026-06-03 00:22:07|INFO|app.services.firecrawl_service|firecrawl.search.complete company=McKinsey results=8 jobs=0 credits=9
+2026-06-03 00:22:07|INFO|app.services.firecrawl_service|firecrawl.search.start company=Media.net query=Media.net careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.media.net -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:22:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Media.net url=https://hoonartek.sensehq.com/careers/jobs/55145
+2026-06-03 00:22:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Media.net url=https://www.glassdoor.co.in/Job/india-aws-data-engineer-jobs-SRCH_IL.0,5_IN115_KO6,23.htm
+2026-06-03 00:22:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Media.net url=https://careers.expediagroup.com/job/data-engineer-iii-rag-and-gen-ai/bangalore-bangalore/R-103482-1/
+2026-06-03 00:22:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Media.net url=https://www.mondelezinternational.com/careers/jobs/job/index.html
+2026-06-03 00:22:18|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Media.net results=8 jobs=0 credits=10
+2026-06-03 00:22:18|INFO|app.services.firecrawl_service|firecrawl.search.start company=Meta query=Meta careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:metacareers.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:22:28|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Meta url=https://jobs.jobvite.com/brahma/job/oRaKxfw2
+2026-06-03 00:22:28|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Meta url=https://www.builtinboston.com/jobs/data-analytics/data-engineering
+2026-06-03 00:22:28|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Meta results=8 jobs=0 credits=8
+2026-06-03 00:22:28|INFO|app.services.firecrawl_service|firecrawl.search.start company=Microsoft query=Microsoft careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.microsoft.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Microsoft url=https://microsoft.ai/job/member-of-technical-staff-data-engineer-4/
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Microsoft url=https://jobs.experian.com/job/azure-data-engineer-in-hyderabad-india-jid-2127
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Microsoft url=https://careers.amgen.com/en/job/hyderabad/bi-data-engineer-precision-medicine-team/87/92371468704
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Microsoft url=https://ejta.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/9796/
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Microsoft url=https://careers-healthedge.icims.com/jobs/7703/senior-data-engineer/job
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Microsoft results=8 jobs=0 credits=9
+2026-06-03 00:22:51|INFO|app.services.firecrawl_service|firecrawl.search.start company=MindTickle query=MindTickle careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:mindtickle.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:22:58|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=MindTickle url=https://www.ambitionbox.com/jobs/sde-ii-technical-solutions-in-mindtickle-inc-dot-naukri_050825500931-jdp
+2026-06-03 00:22:58|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=MindTickle url=https://nextleap.app/jobs/engineering/sdeii-backend-developer-mindtickle/v1ojchz3
+2026-06-03 00:22:58|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=MindTickle url=https://www.glassdoor.co.in/Job/jobs.htm
+2026-06-03 00:22:58|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=MindTickle url=https://www.shine.com/jobs/machine-learning-engineer/mindtickle/18858576
+2026-06-03 00:22:58|INFO|app.services.firecrawl_service|firecrawl.search.complete company=MindTickle results=8 jobs=0 credits=13
+2026-06-03 00:22:58|INFO|app.services.firecrawl_service|firecrawl.search.start company=Morgan Stanley query=Morgan Stanley careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:morganstanley.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:23:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Morgan Stanley url=https://bebee.com/in/jobs/data-engineer-snowflake-associate-software-engineering-morgan-stanley-bengaluru-bangalore--techmap_in_50653732
+2026-06-03 00:23:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Morgan Stanley url=http://morganstanley.eightfold.ai/careers/job/549797100767
+2026-06-03 00:23:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Morgan Stanley url=https://jobs.avemaria.edu/companies/morgan-stanley/jobs/48627830-data-engineer-parametric
+2026-06-03 00:23:21|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Morgan Stanley url=https://jobs.anitab.org/companies/morgan-stanley/jobs/80897621-lead-data-engineer-vice-president-data-engineering
+2026-06-03 00:23:21|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Morgan Stanley results=8 jobs=0 credits=13
+2026-06-03 00:23:21|INFO|app.services.firecrawl_service|firecrawl.search.start company=NVIDIA query=NVIDIA careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:nvidia.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=NVIDIA url=https://datasciencejobs.com/companies/nvidia/
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=NVIDIA url=https://www.builtinsf.com/job/senior-data-engineer-ops-data-platform/7366640
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=NVIDIA url=http://jobs.circana.com/careers/job/1133912017012
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=NVIDIA url=https://www.jobzmall.com/nvidia/job/senior-deep-learning-data-engineer
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=NVIDIA url=https://www.turing.com/jobs/data-engineer-jobs-in-hyderabad
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.complete company=NVIDIA results=8 jobs=0 credits=10
+2026-06-03 00:23:36|INFO|app.services.firecrawl_service|firecrawl.search.start company=Oracle query=Oracle careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.oracle.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:23:52|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Oracle url=https://jobs.experian.com/job/associate-data-engineer-in-hyderabad-india-jid-2674
+2026-06-03 00:23:52|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Oracle url=https://bebee.com/in/jobs/data-engineer-oracle-pl-sql-whitefield-careers-bengaluru-karnataka-india--appcast-15820_4404776838
+2026-06-03 00:23:52|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Oracle url=https://southasiacareers.deloitte.com/job/Hyderabad-Senior-Consultant-Oracle-Data-Engineering-Hyderabad-Oracle/55278344/
+2026-06-03 00:23:52|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Oracle results=8 jobs=0 credits=9
+2026-06-03 00:23:52|INFO|app.services.firecrawl_service|firecrawl.search.start company=PayPal query=PayPal careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:paypal.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:24:10|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=PayPal url=http://jobs.circana.com/careers/job/1133912017012
+2026-06-03 00:24:10|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=PayPal url=https://www.jobaaj.com/job/paypal-business-intelligence-data-engineer-2-bengaluru-karnataka-india-7-to-2-years-287964
+2026-06-03 00:24:10|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=PayPal url=https://bebee.com/in/jobs/senior-data-engineer-paypal-bengaluru--techmap_in_paypal_274918257331
+2026-06-03 00:24:10|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=PayPal url=https://www.glassdoor.co.in/Job/india-paypal-data-engineer-jobs-SRCH_IL.0,5_IN115_KO6,26.htm
+2026-06-03 00:24:10|INFO|app.services.firecrawl_service|firecrawl.search.complete company=PayPal results=8 jobs=0 credits=9
+2026-06-03 00:24:10|INFO|app.services.firecrawl_service|firecrawl.search.start company=Paytm query=Paytm careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:paytm.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:24:20|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Paytm url=https://jobs.lever.co/paytm/97c2de3c-80ea-4e63-909a-8d840b2c22b3
+2026-06-03 00:24:20|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Paytm url=https://outscal.com/job/data-engineer-lead-data-engineer-at-paytm-in-bangalore-karnataka-india
+2026-06-03 00:24:20|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Paytm results=8 jobs=0 credits=13
+2026-06-03 00:24:20|INFO|app.services.firecrawl_service|firecrawl.search.start company=PhonePe query=PhonePe careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:phonepe.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:25:31|ERROR|app.services.firecrawl_service|firecrawl.search.error company=PhonePe
+Traceback (most recent call last):
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "contextlib.py", line 158, in __exit__
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Ewok\Abomination\O-C-2.0\app\services\firecrawl_service.py", line 64, in search_company_jobs
+    response = client.post(
+               ^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "contextlib.py", line 158, in __exit__
+  File "C:\Ewok\Abomination\O-C-2.0\.py312\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-06-03 00:25:31|INFO|app.services.firecrawl_service|firecrawl.search.start company=Philips query=Philips careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.philips.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=Philips title=Power BI - Data Analyst Expert (all genders) in Lodz, Lódzkie, Poland
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=Philips title=Supply Chain Master Data Specialist
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Philips url=https://www.jobaaj.com/job/philips-senior-data-engineer-azure-sql-data-warehousing-chennai-tamil-nadu-india-2-to-4-years-338943
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Philips url=https://builtin.com/job/sr-data-engineer/7566219
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.filtered_irrelevant company=Philips title=Data Analyst Expert (All genders) job in Lodz, Lódzkie, Poland
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Philips url=https://www.shine.com/jobs/specialist-data-engineer/philips/18813377
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Philips results=8 jobs=0 credits=9
+2026-06-03 00:25:46|INFO|app.services.firecrawl_service|firecrawl.search.start company=Postman query=Postman careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:postman.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:25:57|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Postman url=https://jobs.insightpartners.com/companies/postman/jobs/51008991-data-engineer
+2026-06-03 00:25:57|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Postman url=https://builtin.com/job/senior-data-engineer/7633202
+2026-06-03 00:25:57|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Postman url=https://outscal.com/job/senior-data-engineer-at-postman-in-hyderabad-telangana-india
+2026-06-03 00:25:57|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Postman url=https://fractal.wd1.myworkdayjobs.com/en-US/Careers/job/Bengaluru/Data-Engineer---AWS_SR-37522
+2026-06-03 00:25:57|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Postman results=8 jobs=0 credits=10
+2026-06-03 00:25:57|INFO|app.services.firecrawl_service|firecrawl.search.start company=Publicis Sapient query=Publicis Sapient careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.publicissapient.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:26:05|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Publicis Sapient url=https://nodeflair.com/jobs/publicis-sapient-senior-data-engineer-gcp-528339
+2026-06-03 00:26:05|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Publicis Sapient url=https://www.foundit.in/job/senior-data-engineer-publicis-sapient-bengaluru-bangalore-54303240
+2026-06-03 00:26:05|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Publicis Sapient url=https://www.iitjobs.com/job/senior-aws-data-engineering-architect-irvine-ca-usa-35793
+2026-06-03 00:26:05|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Publicis Sapient results=8 jobs=0 credits=9
+2026-06-03 00:26:05|INFO|app.services.firecrawl_service|firecrawl.search.start company=Pure Storage query=Pure Storage careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:purestorage.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:26:17|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Pure Storage url=https://www.shine.com/jobs/senior-data-and-analytics-engineer/pure-storage/18852643
+2026-06-03 00:26:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Pure Storage url=https://www.nextgenenergyjobs.com/company/pure-storage/jobs/platform-analytics-engineer-3
+2026-06-03 00:26:18|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Pure Storage url=https://apna.co/job/bengaluru/senior-data-engineering-manager-conversational-ai--1511235572
+2026-06-03 00:26:18|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Pure Storage results=8 jobs=0 credits=9
+2026-06-03 00:26:18|INFO|app.services.firecrawl_service|firecrawl.search.start company=Qualcomm query=Qualcomm careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:qualcomm.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:26:33|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Qualcomm url=https://bebee.com/in/jobs/lead-databricks-data-engineer-qualcomm-hyderabad--fj-2137465417
+2026-06-03 00:26:33|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Qualcomm url=https://www.bayt.com/en/india/jobs/it-data-engineer-74567577/
+2026-06-03 00:26:33|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Qualcomm url=https://unstop.com/jobs/data-engineer-qualcomm-599674
+2026-06-03 00:26:33|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Qualcomm results=8 jobs=0 credits=9
+2026-06-03 00:26:33|INFO|app.services.firecrawl_service|firecrawl.search.start company=SAP Labs query=SAP Labs careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:jobs.sap.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:26:42|INFO|app.services.firecrawl_service|firecrawl.search.complete company=SAP Labs results=8 jobs=0 credits=9
+2026-06-03 00:26:42|INFO|app.services.firecrawl_service|firecrawl.search.start company=Samsung query=Samsung careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:samsung.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:26:52|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Samsung url=https://www.glassdoor.co.in/Job/bengaluru-samsung-data-engineer-jobs-SRCH_IL.0,9_IC2940587_KO10,31.htm
+2026-06-03 00:26:52|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Samsung url=https://builtin.com/job/data-engineer/3439619
+2026-06-03 00:26:52|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Samsung url=https://careers.blis.com/jobs/6442707-senior-data-engineer?utm_campaign=jobs-widget&utm_source=careers.blis.com&utm_content=jobs&utm_medium=web
+2026-06-03 00:26:52|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Samsung results=8 jobs=0 credits=10
+2026-06-03 00:26:52|INFO|app.services.firecrawl_service|firecrawl.search.start company=ServiceNow query=ServiceNow careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:careers.servicenow.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:27:06|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=ServiceNow url=https://jobs.exxonmobil.com/job/Bangalore-ServiceNow-CMDBData-Engineer-KA-560066/1389061700/
+2026-06-03 00:27:06|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=ServiceNow url=https://jobs.omegavp.com/companies/servicenow/jobs/40439161-senior-data-engineer
+2026-06-03 00:27:06|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=ServiceNow url=https://www.iitjobs.com/job/data-engineer-with-servicenow-phoenix-az-usa-177950
+2026-06-03 00:27:06|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=ServiceNow url=https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/Senior-Security-Data-Engineer_RP1036736
+2026-06-03 00:27:06|INFO|app.services.firecrawl_service|firecrawl.search.complete company=ServiceNow results=8 jobs=0 credits=9
+2026-06-03 00:27:06|INFO|app.services.firecrawl_service|firecrawl.search.start company=Sprinklr query=Sprinklr careers jobs ("Data Engineer" OR "Analytics Engineer" OR "ETL Developer" OR "Data Platform Engineer" OR "Data Warehouse Engineer" OR "Big Data Engineer" OR "BI Engineer") (Python OR SQL OR PostgreSQL OR AWS OR Docker) ("India" OR "Bengaluru" OR "Bangalore" OR "Hyderabad" OR "Pune" OR "Chennai" OR "Mumbai" OR "Gurugram" OR "Gurgaon" OR "Noida") site:sprinklr.com -frontend -front-end -mobile -android -ios -indeed -linkedin
+2026-06-03 00:27:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Sprinklr url=https://www.glassdoor.co.in/Job/big-data-backend-engineer-jobs-SRCH_KO0,25.htm
+2026-06-03 00:27:24|INFO|app.services.firecrawl_service|firecrawl.search.filtered_domain company=Sprinklr url=https://www.shine.com/jobs/product-engineer-l5/sprinklr/18822461
+2026-06-03 00:27:24|INFO|app.services.firecrawl_service|firecrawl.search.complete company=Sprinklr results=8 jobs=0 credits=7
+2026-06-03 00:27:24|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-03 00:27:24|INFO|app.services.search_service|search.run_cycle.complete companies=45 companies_with_results=6 jobs_inserted=8
+2026-06-03 00:27:24|INFO|app.main|request.complete id=3d110ee4 method=POST path=/search/run status=200 duration_ms=608289.42
+2026-06-03 00:27:24|INFO|app.main|request.start id=03886ec2 method=GET path=/jobs
+2026-06-03 00:27:24|INFO|app.api.routes|jobs.list count=26 visible=14 filtered=12
+2026-06-03 00:27:24|INFO|app.main|request.complete id=03886ec2 method=GET path=/jobs status=200 duration_ms=22.81
+2026-06-03 00:27:24|INFO|app.main|request.start id=50ae99f5 method=GET path=/jobs/filtered-out
+2026-06-03 00:27:24|INFO|app.api.routes|jobs.filtered_out.list count=12 keywords=vice,lead,manager,staff
+2026-06-03 00:27:24|INFO|app.main|request.complete id=50ae99f5 method=GET path=/jobs/filtered-out status=200 duration_ms=24.11
+2026-06-03 00:27:24|INFO|app.main|request.start id=7ea7bd28 method=GET path=/jobs/matches
+2026-06-03 00:27:24|INFO|app.api.routes|jobs.matches.start jobs=14
+2026-06-03 00:27:24|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-03 00:27:28|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:28|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-03 00:27:28|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-03 00:27:32|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:32|INFO|app.services.match_service|match.score job_id=72 title=Senior Data Engineer in Bangalore, Karnātaka, India score=49.50 overlap=0 company_priority=9
+2026-06-03 00:27:32|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2104
+2026-06-03 00:27:37|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:37|INFO|app.services.match_service|match.score job_id=81 title=Sr. Computer Scientist (Data Platform Engineer) score=41.50 overlap=0 company_priority=9
+2026-06-03 00:27:37|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2091
+2026-06-03 00:27:41|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:41|INFO|app.services.match_service|match.score job_id=84 title=Data Engineer - Jobs at Apple (IN) score=84.50 overlap=6 company_priority=9
+2026-06-03 00:27:41|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-03 00:27:45|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:45|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-03 00:27:45|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-03 00:27:49|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:49|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-03 00:27:49|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2113
+2026-06-03 00:27:54|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:54|INFO|app.services.match_service|match.score job_id=86 title=Cloud Data Engineer, (English, Spanish) — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 00:27:54|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-03 00:27:58|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:27:58|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 00:27:58|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-03 00:28:02|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:28:02|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-03 00:28:02|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-03 00:28:06|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:28:06|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 00:28:06|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2121
+2026-06-03 00:28:11|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:28:11|INFO|app.services.match_service|match.score job_id=88 title=Data Engineer I in Pune, India, 411006 | AI & Data at Mastercard score=63.50 overlap=2 company_priority=9
+2026-06-03 00:28:11|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-03 00:28:15|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:28:15|INFO|app.services.match_service|match.score job_id=89 title=Data Engineer II in Pune, India, 411006 | AI & Data at Mastercard score=49.50 overlap=0 company_priority=9
+2026-06-03 00:28:15|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-03 00:28:19|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:28:19|INFO|app.services.match_service|match.score job_id=69 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-03 00:28:19|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2109
+2026-06-03 00:28:23|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 00:28:23|INFO|app.services.match_service|match.score job_id=87 title=Sr. Data Engineer (Big Data & Analytics Engineering) score=56.50 overlap=1 company_priority=9
+2026-06-03 00:28:23|INFO|app.api.routes|jobs.matches.complete generated=14
+2026-06-03 00:28:23|INFO|app.main|request.complete id=7ea7bd28 method=GET path=/jobs/matches status=200 duration_ms=59504.12
+2026-06-03 00:28:23|INFO|app.main|request.start id=2c3c2db8 method=GET path=/admin/db
+2026-06-03 00:28:23|INFO|app.main|request.complete id=2c3c2db8 method=GET path=/admin/db status=200 duration_ms=34.42
+2026-06-03 01:01:37|INFO|app.main|request.start id=286ae039 method=GET path=/jobs
+2026-06-03 01:01:37|INFO|app.api.routes|jobs.list count=26 visible=14 filtered=12
+2026-06-03 01:01:37|INFO|app.main|request.start id=37e6278f method=GET path=/jobs/filtered-out
+2026-06-03 01:01:37|INFO|app.main|request.complete id=286ae039 method=GET path=/jobs status=200 duration_ms=39.04
+2026-06-03 01:01:37|INFO|app.api.routes|jobs.filtered_out.list count=12 keywords=vice,lead,manager,staff
+2026-06-03 01:01:37|INFO|app.main|request.complete id=37e6278f method=GET path=/jobs/filtered-out status=200 duration_ms=38.33
+2026-06-03 01:01:37|INFO|apscheduler.scheduler|Scheduler has been shut down
+2026-06-03 01:01:37|INFO|app.main|app.shutdown job_report.start
+2026-06-03 01:01:37|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-03 01:01:39|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-03 01:01:39|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-06-03 01:01:39|INFO|apscheduler.scheduler|Scheduler started
+2026-06-03 01:01:39|INFO|app.main|scheduler.started interval_hours=12
+2026-06-03 01:01:39|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-06-03 01:02:00|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-03 01:02:00|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-06-03 01:02:00|INFO|apscheduler.scheduler|Scheduler started
+2026-06-03 01:02:00|INFO|app.main|scheduler.started interval_hours=12
+2026-06-03 01:02:00|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-06-03 01:02:03|INFO|app.main|request.start id=b138ba65 method=GET path=/health
+2026-06-03 01:02:03|INFO|app.main|request.complete id=b138ba65 method=GET path=/health status=200 duration_ms=1.49
+2026-06-03 01:02:30|INFO|app.main|request.start id=14c99e27 method=GET path=/admin/db
+2026-06-03 01:02:30|INFO|app.main|request.start id=b77fd5b4 method=GET path=/jobs/filtered-out
+2026-06-03 01:02:30|INFO|app.main|request.start id=eb293d1b method=GET path=/jobs
+2026-06-03 01:02:30|INFO|app.api.routes|jobs.filtered_out.list count=11 keywords=vice,lead,manager,staff
+2026-06-03 01:02:30|INFO|app.main|request.complete id=b77fd5b4 method=GET path=/jobs/filtered-out status=200 duration_ms=57.68
+2026-06-03 01:02:30|INFO|app.api.routes|jobs.list count=26 visible=15 filtered=11
+2026-06-03 01:02:30|INFO|app.main|request.complete id=14c99e27 method=GET path=/admin/db status=200 duration_ms=96.93
+2026-06-03 01:02:30|INFO|app.main|request.complete id=eb293d1b method=GET path=/jobs status=200 duration_ms=59.04
+2026-06-03 01:02:45|INFO|app.main|request.start id=626fde2f method=GET path=/jobs
+2026-06-03 01:02:45|INFO|app.api.routes|jobs.list count=26 visible=15 filtered=11
+2026-06-03 01:02:45|INFO|app.main|request.complete id=626fde2f method=GET path=/jobs status=200 duration_ms=26.34
+2026-06-03 01:02:46|INFO|app.main|request.start id=938fd3d3 method=POST path=/jobs/71 72 81 84 64 77 86 80 24 23 85 88 89 69 87/filter
+2026-06-03 01:02:46|INFO|app.main|request.complete id=938fd3d3 method=POST path=/jobs/71 72 81 84 64 77 86 80 24 23 85 88 89 69 87/filter status=422 duration_ms=1.76
+2026-06-03 01:02:46|INFO|app.main|request.start id=3e0c291f method=GET path=/jobs/filtered-out
+2026-06-03 01:02:46|INFO|app.api.routes|jobs.filtered_out.list count=11 keywords=vice,lead,manager,staff
+2026-06-03 01:02:46|INFO|app.main|request.complete id=3e0c291f method=GET path=/jobs/filtered-out status=200 duration_ms=24.43
+2026-06-03 01:02:57|INFO|app.main|request.start id=ebf7d52c method=GET path=/jobs
+2026-06-03 01:02:57|INFO|app.api.routes|jobs.list count=26 visible=15 filtered=11
+2026-06-03 01:02:57|INFO|app.main|request.complete id=ebf7d52c method=GET path=/jobs status=200 duration_ms=29.0
+2026-06-03 01:02:57|INFO|app.main|request.start id=9244edc9 method=POST path=/jobs//filter
+2026-06-03 01:02:57|INFO|app.main|request.complete id=9244edc9 method=POST path=/jobs//filter status=404 duration_ms=1.05
+2026-06-03 01:02:57|INFO|app.main|request.start id=09592f4f method=GET path=/jobs/filtered-out
+2026-06-03 01:02:57|INFO|app.api.routes|jobs.filtered_out.list count=11 keywords=vice,lead,manager,staff
+2026-06-03 01:02:57|INFO|app.main|request.complete id=09592f4f method=GET path=/jobs/filtered-out status=200 duration_ms=25.88
+2026-06-03 01:03:08|INFO|app.main|request.start id=ec8d0ace method=GET path=/jobs
+2026-06-03 01:03:08|INFO|app.api.routes|jobs.list count=26 visible=15 filtered=11
+2026-06-03 01:03:08|INFO|app.main|request.complete id=ec8d0ace method=GET path=/jobs status=200 duration_ms=25.34
+2026-06-03 01:03:08|INFO|app.main|request.start id=d3f474ec method=POST path=/jobs/71/filter
+2026-06-03 01:03:08|INFO|app.api.routes|jobs.filter.manual job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe
+2026-06-03 01:03:08|INFO|app.main|request.complete id=d3f474ec method=POST path=/jobs/71/filter status=200 duration_ms=13.34
+2026-06-03 01:03:08|INFO|app.main|request.start id=1ec794f8 method=GET path=/jobs/filtered-out
+2026-06-03 01:03:08|INFO|app.api.routes|jobs.filtered_out.list count=12 keywords=vice,lead,manager,staff
+2026-06-03 01:03:08|INFO|app.main|request.complete id=1ec794f8 method=GET path=/jobs/filtered-out status=200 duration_ms=26.02
+2026-06-03 01:03:08|INFO|app.main|request.start id=19a03dac method=GET path=/jobs/filtered-out
+2026-06-03 01:03:08|INFO|app.api.routes|jobs.filtered_out.list count=11 keywords=vice,lead,manager,staff
+2026-06-03 01:03:08|INFO|app.main|request.complete id=19a03dac method=GET path=/jobs/filtered-out status=200 duration_ms=27.05
+2026-06-03 01:03:39|INFO|app.main|request.start id=ab34508b method=GET path=/jobs/filtered-out
+2026-06-03 01:03:39|INFO|app.api.routes|jobs.filtered_out.list count=11 keywords=vice,lead,manager,staff
+2026-06-03 01:03:39|INFO|app.main|request.complete id=ab34508b method=GET path=/jobs/filtered-out status=200 duration_ms=35.31
+2026-06-03 01:03:39|INFO|app.main|request.start id=ecd633b4 method=GET path=/jobs
+2026-06-03 01:03:39|INFO|app.api.routes|jobs.list count=26 visible=15 filtered=11
+2026-06-03 01:03:39|INFO|app.main|request.complete id=ecd633b4 method=GET path=/jobs status=200 duration_ms=27.69
+2026-06-03 01:03:52|INFO|apscheduler.scheduler|Scheduler has been shut down
+2026-06-03 01:03:52|INFO|app.main|app.shutdown job_report.start
+2026-06-03 01:03:52|WARNING|app.services.email_service|job_report.email.skipped reason=missing_smtp_password
+2026-06-03 01:03:57|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-03 01:03:57|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-06-03 01:03:57|INFO|apscheduler.scheduler|Scheduler started
+2026-06-03 01:03:57|INFO|app.main|scheduler.started interval_hours=12
+2026-06-03 01:03:57|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-06-03 01:04:00|INFO|app.main|request.start id=abca9635 method=GET path=/jobs/filtered-out
+2026-06-03 01:04:00|INFO|app.api.routes|jobs.filtered_out.list count=15 keywords=vice,lead,manager,staff,senior,sr
+2026-06-03 01:04:00|INFO|app.main|request.complete id=abca9635 method=GET path=/jobs/filtered-out status=200 duration_ms=38.79
+2026-06-03 01:04:00|INFO|app.main|request.start id=eaaf4f2c method=GET path=/jobs
+2026-06-03 01:04:00|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
+2026-06-03 01:04:00|INFO|app.main|request.complete id=eaaf4f2c method=GET path=/jobs status=200 duration_ms=21.43
+2026-06-03 01:04:15|INFO|app.main|request.start id=161e467b method=GET path=/jobs/filtered-out
+2026-06-03 01:04:15|INFO|app.api.routes|jobs.filtered_out.list count=15 keywords=vice,lead,manager,staff,senior,sr
+2026-06-03 01:04:15|INFO|app.main|request.start id=eeac01db method=GET path=/jobs
+2026-06-03 01:04:15|INFO|app.main|request.complete id=161e467b method=GET path=/jobs/filtered-out status=200 duration_ms=26.36
+2026-06-03 01:04:15|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
+2026-06-03 01:04:15|INFO|app.main|request.complete id=eeac01db method=GET path=/jobs status=200 duration_ms=23.52
+2026-06-03 01:14:41|INFO|app.main|request.start id=416f0132 method=GET path=/health
+2026-06-03 01:14:41|INFO|app.main|request.complete id=416f0132 method=GET path=/health status=200 duration_ms=2.21
+2026-06-03 01:14:41|INFO|app.main|request.start id=c62bfac5 method=GET path=/profile
+2026-06-03 01:14:41|INFO|app.api.routes|profile.fetch found=True
+2026-06-03 01:14:41|INFO|app.main|request.complete id=c62bfac5 method=GET path=/profile status=200 duration_ms=4.71
+2026-06-03 01:14:41|INFO|app.main|request.start id=62f61d9b method=GET path=/companies
+2026-06-03 01:14:41|INFO|app.services.company_service|company.list count=61
+2026-06-03 01:14:41|INFO|app.api.routes|companies.list count=61
+2026-06-03 01:14:41|INFO|app.main|request.complete id=62f61d9b method=GET path=/companies status=200 duration_ms=5.1
+2026-06-03 01:14:41|INFO|app.main|request.start id=99949718 method=GET path=/jobs
+2026-06-03 01:14:41|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
+2026-06-03 01:14:41|INFO|app.main|request.complete id=99949718 method=GET path=/jobs status=200 duration_ms=30.77
+2026-06-03 01:14:41|INFO|app.main|request.start id=9ec15dcd method=GET path=/jobs/filtered-out
+2026-06-03 01:14:41|INFO|app.api.routes|jobs.filtered_out.list count=15 keywords=vice,lead,manager,staff,senior,sr
+2026-06-03 01:14:41|INFO|app.main|request.complete id=9ec15dcd method=GET path=/jobs/filtered-out status=200 duration_ms=27.86
+2026-06-03 01:14:41|INFO|app.main|request.start id=321b5df0 method=GET path=/jobs/matches
+2026-06-03 01:14:41|INFO|app.api.routes|jobs.matches.start jobs=11
+2026-06-03 01:14:41|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-03 01:14:45|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:14:45|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karnātaka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-03 01:14:45|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2091
+2026-06-03 01:14:50|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:14:50|INFO|app.services.match_service|match.score job_id=84 title=Data Engineer - Jobs at Apple (IN) score=84.50 overlap=6 company_priority=9
+2026-06-03 01:14:50|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-03 01:14:54|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:14:54|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-03 01:14:54|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-03 01:14:58|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:14:58|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-03 01:14:58|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2113
+2026-06-03 01:15:02|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:02|INFO|app.services.match_service|match.score job_id=86 title=Cloud Data Engineer, (English, Spanish) — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 01:15:02|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-03 01:15:07|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:07|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 01:15:07|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-03 01:15:07|INFO|app.main|request.start id=1f2223fe method=GET path=/jobs
+2026-06-03 01:15:07|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
+2026-06-03 01:15:07|INFO|app.main|request.complete id=1f2223fe method=GET path=/jobs status=200 duration_ms=29.56
+2026-06-03 01:15:11|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:11|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-03 01:15:11|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-03 01:15:15|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:15|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-03 01:15:15|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2120
+2026-06-03 01:15:20|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:20|INFO|app.services.match_service|match.score job_id=85 title=Data Engineer, Play Data Science and Analytics — Google Careers score=56.50 overlap=1 company_priority=9
+2026-06-03 01:15:20|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2121
+2026-06-03 01:15:24|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:24|INFO|app.services.match_service|match.score job_id=88 title=Data Engineer I in Pune, India, 411006 | AI & Data at Mastercard score=63.50 overlap=2 company_priority=9
+2026-06-03 01:15:24|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-03 01:15:28|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-03 01:15:28|INFO|app.services.match_service|match.score job_id=89 title=Data Engineer II in Pune, India, 411006 | AI & Data at Mastercard score=49.50 overlap=0 company_priority=9
+2026-06-03 01:15:28|INFO|app.api.routes|jobs.matches.complete generated=11
+2026-06-03 01:15:28|INFO|app.main|request.complete id=321b5df0 method=GET path=/jobs/matches status=200 duration_ms=47086.06
+2026-06-03 01:15:28|INFO|app.main|request.start id=d4ba9545 method=GET path=/admin/db
+2026-06-03 01:15:28|INFO|app.main|request.complete id=d4ba9545 method=GET path=/admin/db status=200 duration_ms=39.59
+2026-06-03 01:15:32|INFO|app.main|request.start id=767930ee method=GET path=/jobs
+2026-06-03 01:15:32|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
+2026-06-03 01:15:32|INFO|app.main|request.complete id=767930ee method=GET path=/jobs status=200 duration_ms=25.86
+2026-06-03 01:15:40|INFO|app.main|request.start id=911accf0 method=GET path=/jobs
+2026-06-03 01:15:40|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
+2026-06-03 01:15:40|INFO|app.main|request.complete id=911accf0 method=GET path=/jobs status=200 duration_ms=24.69
+2026-06-03 01:15:42|INFO|app.main|request.start id=a36775b2 method=POST path=/jobs/89/filter
+2026-06-03 01:15:42|INFO|app.api.routes|jobs.filter.manual job_id=89 title=Data Engineer II in Pune, India, 411006 | AI & Data at Mastercard
+2026-06-03 01:15:42|INFO|app.main|request.complete id=a36775b2 method=POST path=/jobs/89/filter status=200 duration_ms=22.25
+2026-06-03 01:15:42|INFO|app.main|request.start id=2ba90afc method=GET path=/jobs
+2026-06-03 01:15:42|INFO|app.api.routes|jobs.list count=26 visible=10 filtered=16
+2026-06-03 01:15:42|INFO|app.main|request.complete id=2ba90afc method=GET path=/jobs status=200 duration_ms=21.51
+2026-06-03 01:15:42|INFO|app.main|request.start id=0ed70ade method=GET path=/jobs/filtered-out
+2026-06-03 01:15:42|INFO|app.api.routes|jobs.filtered_out.list count=16 keywords=vice,lead,manager,staff,senior,sr
+2026-06-03 01:15:42|INFO|app.main|request.complete id=0ed70ade method=GET path=/jobs/filtered-out status=200 duration_ms=27.37
+2026-06-03 01:15:42|INFO|app.main|request.start id=86c16e4a method=GET path=/admin/db
+2026-06-03 01:15:42|INFO|app.main|request.complete id=86c16e4a method=GET path=/admin/db status=200 duration_ms=27.23

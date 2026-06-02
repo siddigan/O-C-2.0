@@ -386,6 +386,53 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.025);
 }
 
+.job-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+.job-item:first-child {
+  border-top: 0;
+}
+
+.job-row {
+  width: 100%;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.job-row:hover,
+.job-row:focus,
+.job-row.expanded {
+  outline: none;
+  background: rgba(103, 169, 255, 0.08);
+}
+
+.job-detail {
+  display: none;
+  padding: 0 14px 14px;
+  background: rgba(103, 169, 255, 0.045);
+}
+
+.job-detail.open {
+  display: block;
+}
+
+.job-detail-head {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.job-detail textarea {
+  min-height: 84px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
 .filtered-table-head,
 .filtered-table-row {
   grid-template-columns: 1.8fr 1fr 1.1fr 0.6fr;

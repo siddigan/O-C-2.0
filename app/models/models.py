@@ -62,3 +62,12 @@ class JobMatch(Base):
     match_reason: Mapped[str] = mapped_column(Text)
     rank_score: Mapped[float] = mapped_column(Float)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class ManualJobFilter(Base):
+    __tablename__ = "manual_job_filters"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    job_id: Mapped[int] = mapped_column(ForeignKey("jobs.id"), unique=True, index=True)
+    reason: Mapped[str] = mapped_column(String(255), default="Moved manually")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
