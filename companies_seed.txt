@@ -59,3 +59,25 @@ Zoho | 9 | https://www.zoho.com/careers.html
 Idfc | 9 | https://www.idfcfirstbank.com/careers
 Koch | 9 | https://jobs.kochcareers.com/
 Maersk | 9 | https://www.maersk.com/careers
+Jane Street | 10 | https://www.janestreet.com/join-jane-street/open-roles/
+Citadel | 10 | https://www.citadel.com/careers/open-positions/
+Citadel Securities | 10 | https://www.citadelsecurities.com/careers/open-opportunities/
+Hudson River Trading | 10 | https://www.hudsonrivertrading.com/careers/
+Two Sigma | 10 | https://www.twosigma.com/careers/
+D.E. Shaw | 10 | https://www.deshaw.com/careers
+Jump Trading | 10 | https://www.jumptrading.com/careers/
+Optiver | 10 | https://optiver.com/working-at-optiver/career-opportunities/
+IMC Trading | 10 | https://www.imc.com/us/careers/
+DRW | 10 | https://drw.com/work-at-drw/
+Susquehanna International Group | 10 | https://sig.com/careers/
+Five Rings | 10 | https://fiverings.com/careers/
+Akuna Capital | 10 | https://akunacapital.com/careers/
+Millennium Management | 10 | https://www.mlp.com/careers/
+Point72 | 10 | https://careers.point72.com/
+Balyasny Asset Management | 10 | https://www.bamfunds.com/careers/overview
+Bridgewater Associates | 10 | https://www.bridgewater.com/careers/
+Schonfeld | 10 | https://www.schonfeld.com/careers/
+Squarepoint Capital | 10 | https://www.squarepoint-capital.com/careers
+Qube Research & Technologies | 10 | https://www.qube-rt.com/careers/
+G-Research | 10 | https://www.gresearch.com/careers/
+XTX Markets | 10 | https://www.xtxmarkets.com/careers/

@@ -1,97 +1,132 @@
-INFO:     Will watch for changes in these directories: ['C:\\Ewok\\Abomination\\O-C-2.0']
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [4012] using StatReload
-2026-06-03 01:03:57|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2026-06-03 01:03:57|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
-2026-06-03 01:03:57|INFO|apscheduler.scheduler|Scheduler started
-2026-06-03 01:03:57|INFO|app.main|scheduler.started interval_hours=12
-INFO:     Started server process [26608]
+2026-06-05 15:40:34|INFO|apscheduler.scheduler|Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-05 15:40:34|INFO|apscheduler.scheduler|Added job "scheduled_search" to job store "default"
+2026-06-05 15:40:34|INFO|apscheduler.scheduler|Scheduler started
+2026-06-05 15:40:34|INFO|app.main|scheduler.started interval_hours=12
+INFO:     Started server process [17296]
 INFO:     Waiting for application startup.
-2026-06-03 01:03:57|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
+2026-06-05 15:40:34|INFO|app.main|app.start title=OC2 Local Job Search scheduler_enabled=True
 INFO:     Application startup complete.
-2026-06-03 01:04:00|INFO|app.main|request.start id=abca9635 method=GET path=/jobs/filtered-out
-2026-06-03 01:04:00|INFO|app.api.routes|jobs.filtered_out.list count=15 keywords=vice,lead,manager,staff,senior,sr
-2026-06-03 01:04:00|INFO|app.main|request.complete id=abca9635 method=GET path=/jobs/filtered-out status=200 duration_ms=38.79
-2026-06-03 01:04:00|INFO|app.main|request.start id=eaaf4f2c method=GET path=/jobs
-2026-06-03 01:04:00|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
-2026-06-03 01:04:00|INFO|app.main|request.complete id=eaaf4f2c method=GET path=/jobs status=200 duration_ms=21.43
-2026-06-03 01:04:15|INFO|app.main|request.start id=161e467b method=GET path=/jobs/filtered-out
-2026-06-03 01:04:15|INFO|app.api.routes|jobs.filtered_out.list count=15 keywords=vice,lead,manager,staff,senior,sr
-2026-06-03 01:04:15|INFO|app.main|request.start id=eeac01db method=GET path=/jobs
-2026-06-03 01:04:15|INFO|app.main|request.complete id=161e467b method=GET path=/jobs/filtered-out status=200 duration_ms=26.36
-2026-06-03 01:04:15|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
-2026-06-03 01:04:15|INFO|app.main|request.complete id=eeac01db method=GET path=/jobs status=200 duration_ms=23.52
-2026-06-03 01:14:41|INFO|app.main|request.start id=416f0132 method=GET path=/health
-2026-06-03 01:14:41|INFO|app.main|request.complete id=416f0132 method=GET path=/health status=200 duration_ms=2.21
-2026-06-03 01:14:41|INFO|app.main|request.start id=c62bfac5 method=GET path=/profile
-2026-06-03 01:14:41|INFO|app.api.routes|profile.fetch found=True
-2026-06-03 01:14:41|INFO|app.main|request.complete id=c62bfac5 method=GET path=/profile status=200 duration_ms=4.71
-2026-06-03 01:14:41|INFO|app.main|request.start id=62f61d9b method=GET path=/companies
-2026-06-03 01:14:41|INFO|app.services.company_service|company.list count=61
-2026-06-03 01:14:41|INFO|app.api.routes|companies.list count=61
-2026-06-03 01:14:41|INFO|app.main|request.complete id=62f61d9b method=GET path=/companies status=200 duration_ms=5.1
-2026-06-03 01:14:41|INFO|app.main|request.start id=99949718 method=GET path=/jobs
-2026-06-03 01:14:41|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
-2026-06-03 01:14:41|INFO|app.main|request.complete id=99949718 method=GET path=/jobs status=200 duration_ms=30.77
-2026-06-03 01:14:41|INFO|app.main|request.start id=9ec15dcd method=GET path=/jobs/filtered-out
-2026-06-03 01:14:41|INFO|app.api.routes|jobs.filtered_out.list count=15 keywords=vice,lead,manager,staff,senior,sr
-2026-06-03 01:14:41|INFO|app.main|request.complete id=9ec15dcd method=GET path=/jobs/filtered-out status=200 duration_ms=27.86
-2026-06-03 01:14:41|INFO|app.main|request.start id=321b5df0 method=GET path=/jobs/matches
-2026-06-03 01:14:41|INFO|app.api.routes|jobs.matches.start jobs=11
-2026-06-03 01:14:41|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
-2026-06-03 01:14:45|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:14:45|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karn\u0101taka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
-2026-06-03 01:14:45|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2091
-2026-06-03 01:14:50|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:14:50|INFO|app.services.match_service|match.score job_id=84 title=Data Engineer - Jobs at Apple (IN) score=84.50 overlap=6 company_priority=9
-2026-06-03 01:14:50|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
-2026-06-03 01:14:54|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:14:54|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
-2026-06-03 01:14:54|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
-2026-06-03 01:14:58|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:14:58|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
-2026-06-03 01:14:58|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2113
-2026-06-03 01:15:02|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:02|INFO|app.services.match_service|match.score job_id=86 title=Cloud Data Engineer, (English, Spanish) — Google Careers score=49.50 overlap=0 company_priority=9
-2026-06-03 01:15:02|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
-2026-06-03 01:15:07|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:07|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
-2026-06-03 01:15:07|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
-2026-06-03 01:15:07|INFO|app.main|request.start id=1f2223fe method=GET path=/jobs
-2026-06-03 01:15:07|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
-2026-06-03 01:15:07|INFO|app.main|request.complete id=1f2223fe method=GET path=/jobs status=200 duration_ms=29.56
-2026-06-03 01:15:11|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:11|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
-2026-06-03 01:15:11|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
-2026-06-03 01:15:15|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:15|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
-2026-06-03 01:15:15|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2120
-2026-06-03 01:15:20|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:20|INFO|app.services.match_service|match.score job_id=85 title=Data Engineer, Play Data Science and Analytics — Google Careers score=56.50 overlap=1 company_priority=9
-2026-06-03 01:15:20|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2121
-2026-06-03 01:15:24|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:24|INFO|app.services.match_service|match.score job_id=88 title=Data Engineer I in Pune, India, 411006 | AI & Data at Mastercard score=63.50 overlap=2 company_priority=9
-2026-06-03 01:15:24|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
-2026-06-03 01:15:28|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
-2026-06-03 01:15:28|INFO|app.services.match_service|match.score job_id=89 title=Data Engineer II in Pune, India, 411006 | AI & Data at Mastercard score=49.50 overlap=0 company_priority=9
-2026-06-03 01:15:28|INFO|app.api.routes|jobs.matches.complete generated=11
-2026-06-03 01:15:28|INFO|app.main|request.complete id=321b5df0 method=GET path=/jobs/matches status=200 duration_ms=47086.06
-2026-06-03 01:15:28|INFO|app.main|request.start id=d4ba9545 method=GET path=/admin/db
-2026-06-03 01:15:28|INFO|app.main|request.complete id=d4ba9545 method=GET path=/admin/db status=200 duration_ms=39.59
-2026-06-03 01:15:32|INFO|app.main|request.start id=767930ee method=GET path=/jobs
-2026-06-03 01:15:32|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
-2026-06-03 01:15:32|INFO|app.main|request.complete id=767930ee method=GET path=/jobs status=200 duration_ms=25.86
-2026-06-03 01:15:40|INFO|app.main|request.start id=911accf0 method=GET path=/jobs
-2026-06-03 01:15:40|INFO|app.api.routes|jobs.list count=26 visible=11 filtered=15
-2026-06-03 01:15:40|INFO|app.main|request.complete id=911accf0 method=GET path=/jobs status=200 duration_ms=24.69
-2026-06-03 01:15:42|INFO|app.main|request.start id=a36775b2 method=POST path=/jobs/89/filter
-2026-06-03 01:15:42|INFO|app.api.routes|jobs.filter.manual job_id=89 title=Data Engineer II in Pune, India, 411006 | AI & Data at Mastercard
-2026-06-03 01:15:42|INFO|app.main|request.complete id=a36775b2 method=POST path=/jobs/89/filter status=200 duration_ms=22.25
-2026-06-03 01:15:42|INFO|app.main|request.start id=2ba90afc method=GET path=/jobs
-2026-06-03 01:15:42|INFO|app.api.routes|jobs.list count=26 visible=10 filtered=16
-2026-06-03 01:15:42|INFO|app.main|request.complete id=2ba90afc method=GET path=/jobs status=200 duration_ms=21.51
-2026-06-03 01:15:42|INFO|app.main|request.start id=0ed70ade method=GET path=/jobs/filtered-out
-2026-06-03 01:15:42|INFO|app.api.routes|jobs.filtered_out.list count=16 keywords=vice,lead,manager,staff,senior,sr
-2026-06-03 01:15:42|INFO|app.main|request.complete id=0ed70ade method=GET path=/jobs/filtered-out status=200 duration_ms=27.37
-2026-06-03 01:15:42|INFO|app.main|request.start id=86c16e4a method=GET path=/admin/db
-2026-06-03 01:15:42|INFO|app.main|request.complete id=86c16e4a method=GET path=/admin/db status=200 duration_ms=27.23
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-06-05 15:40:35|INFO|app.main|request.start id=c595dc9b method=GET path=/health
+2026-06-05 15:40:35|INFO|app.main|request.complete id=c595dc9b method=GET path=/health status=200 duration_ms=1.92
+2026-06-05 15:40:35|INFO|app.main|request.start id=8c693cd3 method=GET path=/
+2026-06-05 15:40:35|INFO|app.main|request.complete id=8c693cd3 method=GET path=/ status=307 duration_ms=1.63
+2026-06-05 15:40:35|INFO|app.main|request.start id=7bdc7351 method=GET path=/health
+2026-06-05 15:40:35|INFO|app.main|request.complete id=7bdc7351 method=GET path=/health status=200 duration_ms=1.25
+2026-06-05 15:40:35|INFO|app.main|request.start id=6bb8de3f method=GET path=/profile
+2026-06-05 15:40:35|INFO|app.api.routes|profile.fetch found=True
+2026-06-05 15:40:35|INFO|app.main|request.complete id=6bb8de3f method=GET path=/profile status=200 duration_ms=8.09
+2026-06-05 15:40:35|INFO|app.main|request.start id=5e94a4ff method=GET path=/companies
+2026-06-05 15:40:35|INFO|app.services.company_service|company.list count=61
+2026-06-05 15:40:35|INFO|app.api.routes|companies.list count=61
+2026-06-05 15:40:35|INFO|app.main|request.complete id=5e94a4ff method=GET path=/companies status=200 duration_ms=5.81
+2026-06-05 15:40:35|INFO|app.main|request.start id=2b583b35 method=GET path=/jobs
+2026-06-05 15:40:35|INFO|app.api.routes|jobs.list count=26 visible=10 filtered=16
+2026-06-05 15:40:35|INFO|app.main|request.complete id=2b583b35 method=GET path=/jobs status=200 duration_ms=31.15
+2026-06-05 15:40:35|INFO|app.main|request.start id=5534c78f method=GET path=/jobs/filtered-out
+2026-06-05 15:40:35|INFO|app.api.routes|jobs.filtered_out.list count=16 keywords=vice,lead,manager,staff,senior,sr
+2026-06-05 15:40:35|INFO|app.main|request.complete id=5534c78f method=GET path=/jobs/filtered-out status=200 duration_ms=25.21
+2026-06-05 15:40:35|INFO|app.main|request.start id=78ac834b method=GET path=/jobs/matches
+2026-06-05 15:40:35|INFO|app.api.routes|jobs.matches.start jobs=10
+2026-06-05 15:40:35|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-05 15:40:38|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:38|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karn\u0101taka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-05 15:40:38|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2091
+2026-06-05 15:40:40|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:40|INFO|app.services.match_service|match.score job_id=84 title=Data Engineer - Jobs at Apple (IN) score=84.50 overlap=6 company_priority=9
+2026-06-05 15:40:40|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-05 15:40:43|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:43|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-05 15:40:43|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-05 15:40:46|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:46|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-05 15:40:46|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2113
+2026-06-05 15:40:49|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:49|INFO|app.services.match_service|match.score job_id=86 title=Cloud Data Engineer, (English, Spanish) — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-05 15:40:49|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-05 15:40:52|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:52|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-05 15:40:52|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-05 15:40:55|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:55|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-05 15:40:55|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-05 15:40:57|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:40:57|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-05 15:40:57|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2120
+2026-06-05 15:41:00|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:41:00|INFO|app.services.match_service|match.score job_id=85 title=Data Engineer, Play Data Science and Analytics — Google Careers score=56.50 overlap=1 company_priority=9
+2026-06-05 15:41:00|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2121
+2026-06-05 15:41:03|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=Client error '404 Not Found' for url 'http://localhost:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-06-05 15:41:03|INFO|app.services.match_service|match.score job_id=88 title=Data Engineer I in Pune, India, 411006 | AI & Data at Mastercard score=63.50 overlap=2 company_priority=9
+2026-06-05 15:41:03|INFO|app.api.routes|jobs.matches.complete generated=10
+2026-06-05 15:41:03|INFO|app.main|request.complete id=78ac834b method=GET path=/jobs/matches status=200 duration_ms=28048.26
+2026-06-05 15:41:03|INFO|app.main|request.start id=2fa200a1 method=GET path=/admin/db
+2026-06-05 15:41:03|INFO|app.main|request.complete id=2fa200a1 method=GET path=/admin/db status=200 duration_ms=48.06
+2026-06-05 15:41:24|INFO|app.main|request.start id=6c086ce9 method=GET path=/jobs
+2026-06-05 15:41:24|INFO|app.api.routes|jobs.list count=26 visible=10 filtered=16
+2026-06-05 15:41:24|INFO|app.main|request.complete id=6c086ce9 method=GET path=/jobs status=200 duration_ms=81.96
+2026-06-05 15:41:35|INFO|app.main|request.start id=93eeaeec method=GET path=/admin/db
+2026-06-05 15:41:35|INFO|app.main|request.complete id=93eeaeec method=GET path=/admin/db status=200 duration_ms=83.26
+2026-06-05 16:09:48|INFO|app.main|request.start id=43c1840d method=GET path=/jobs
+2026-06-05 16:09:48|INFO|app.api.routes|jobs.list count=26 visible=10 filtered=16
+2026-06-05 16:09:48|INFO|app.main|request.complete id=43c1840d method=GET path=/jobs status=200 duration_ms=66.99
+2026-06-06 00:39:48|INFO|app.main|request.start id=a6562f86 method=GET path=/companies
+2026-06-06 00:39:48|INFO|app.services.company_service|company.list count=61
+2026-06-06 00:39:48|INFO|app.api.routes|companies.list count=61
+2026-06-06 00:39:48|INFO|app.main|request.complete id=a6562f86 method=GET path=/companies status=200 duration_ms=43.71
+2026-06-06 00:39:48|INFO|app.main|request.start id=bc13d083 method=GET path=/jobs
+2026-06-06 00:39:48|INFO|app.api.routes|jobs.list count=26 visible=10 filtered=16
+2026-06-06 00:39:48|INFO|app.main|request.complete id=bc13d083 method=GET path=/jobs status=200 duration_ms=72.53
+2026-06-06 00:39:48|INFO|app.main|request.start id=6621b2a1 method=GET path=/jobs/filtered-out
+2026-06-06 00:39:48|INFO|app.api.routes|jobs.filtered_out.list count=16 keywords=vice,lead,manager,staff,senior,sr
+2026-06-06 00:39:48|INFO|app.main|request.complete id=6621b2a1 method=GET path=/jobs/filtered-out status=200 duration_ms=68.7
+2026-06-06 00:39:48|INFO|app.main|request.start id=43c3ed65 method=GET path=/jobs/matches
+2026-06-06 00:39:48|INFO|app.api.routes|jobs.matches.start jobs=10
+2026-06-06 00:39:48|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2035
+2026-06-06 00:39:53|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:39:53|INFO|app.services.match_service|match.score job_id=71 title=Data engineer in Bangalore, Karn\u0101taka, India | Design at Adobe score=49.50 overlap=0 company_priority=9
+2026-06-06 00:39:53|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2091
+2026-06-06 00:39:58|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:39:58|INFO|app.services.match_service|match.score job_id=84 title=Data Engineer - Jobs at Apple (IN) score=84.50 overlap=6 company_priority=9
+2026-06-06 00:39:58|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2089
+2026-06-06 00:40:03|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:03|INFO|app.services.match_service|match.score job_id=64 title=Big Data Engineer | Citi Careers score=63.50 overlap=2 company_priority=9
+2026-06-06 00:40:03|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2094
+2026-06-06 00:40:07|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:07|INFO|app.services.match_service|match.score job_id=77 title=Data Engineer - Python | Citi Careers score=84.50 overlap=5 company_priority=9
+2026-06-06 00:40:07|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2113
+2026-06-06 00:40:12|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:12|INFO|app.services.match_service|match.score job_id=86 title=Cloud Data Engineer, (English, Spanish) — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-06 00:40:12|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2122
+2026-06-06 00:40:17|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:17|INFO|app.services.match_service|match.score job_id=80 title=Data Engineer, Data Architecture and Engineering — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-06 00:40:17|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2108
+2026-06-06 00:40:22|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:22|INFO|app.services.match_service|match.score job_id=24 title=Data Engineer, Geo 3P and Developer Data Operations score=49.50 overlap=0 company_priority=9
+2026-06-06 00:40:22|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2119
+2026-06-06 00:40:27|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:27|INFO|app.services.match_service|match.score job_id=23 title=Data Engineer, Global Business and Operations — Google Careers score=49.50 overlap=0 company_priority=9
+2026-06-06 00:40:27|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2120
+2026-06-06 00:40:32|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:32|INFO|app.services.match_service|match.score job_id=85 title=Data Engineer, Play Data Science and Analytics — Google Careers score=56.50 overlap=1 company_priority=9
+2026-06-06 00:40:32|INFO|app.services.ollama_client|ollama.request.start model=qwen2.5:3b prompt_chars=2121
+2026-06-06 00:40:36|WARNING|app.services.ollama_client|ollama.request.fallback model=qwen2.5:3b error=[WinError 10061] No connection could be made because the target machine actively refused it
+2026-06-06 00:40:36|INFO|app.services.match_service|match.score job_id=88 title=Data Engineer I in Pune, India, 411006 | AI & Data at Mastercard score=63.50 overlap=2 company_priority=9
+2026-06-06 00:40:37|INFO|app.api.routes|jobs.matches.complete generated=10
+2026-06-06 00:40:37|INFO|app.main|request.complete id=43c3ed65 method=GET path=/jobs/matches status=200 duration_ms=48233.76
+2026-06-06 02:52:29|INFO|app.main|request.start id=4a6bcbbc method=GET path=/admin/db
+2026-06-06 02:52:29|INFO|app.main|request.complete id=4a6bcbbc method=GET path=/admin/db status=200 duration_ms=150.3
+2026-06-06 03:38:29|INFO|app.main|request.start id=a64cb833 method=GET path=/companies
+2026-06-06 03:38:29|INFO|app.services.company_service|company.list count=83
+2026-06-06 03:38:29|INFO|app.api.routes|companies.list count=83
+2026-06-06 03:38:29|INFO|app.main|request.complete id=a64cb833 method=GET path=/companies status=200 duration_ms=9.97

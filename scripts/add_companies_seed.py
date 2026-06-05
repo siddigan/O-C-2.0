@@ -63,23 +63,70 @@ companies = [
     ("Idfc", "https://www.idfcfirstbank.com/careers"),
     ("Koch", "https://jobs.kochcareers.com/"),
     ("Maersk", "https://www.maersk.com/careers"),
+    ("Jane Street", "https://www.janestreet.com/join-jane-street/open-roles/"),
+    ("Citadel", "https://www.citadel.com/careers/open-positions/"),
+    ("Citadel Securities", "https://www.citadelsecurities.com/careers/open-opportunities/"),
+    ("Hudson River Trading", "https://www.hudsonrivertrading.com/careers/"),
+    ("Two Sigma", "https://www.twosigma.com/careers/"),
+    ("D.E. Shaw", "https://www.deshaw.com/careers"),
+    ("Jump Trading", "https://www.jumptrading.com/careers/"),
+    ("Optiver", "https://optiver.com/working-at-optiver/career-opportunities/"),
+    ("IMC Trading", "https://www.imc.com/us/careers/"),
+    ("DRW", "https://drw.com/work-at-drw/"),
+    ("Susquehanna International Group", "https://sig.com/careers/"),
+    ("Five Rings", "https://fiverings.com/careers/"),
+    ("Akuna Capital", "https://akunacapital.com/careers/"),
+    ("Millennium Management", "https://www.mlp.com/careers/"),
+    ("Point72", "https://careers.point72.com/"),
+    ("Balyasny Asset Management", "https://www.bamfunds.com/careers/overview"),
+    ("Bridgewater Associates", "https://www.bridgewater.com/careers/"),
+    ("Schonfeld", "https://www.schonfeld.com/careers/"),
+    ("Squarepoint Capital", "https://www.squarepoint-capital.com/careers"),
+    ("Qube Research & Technologies", "https://www.qube-rt.com/careers/"),
+    ("G-Research", "https://www.gresearch.com/careers/"),
+    ("XTX Markets", "https://www.xtxmarkets.com/careers/"),
 ]
 
 PRIORITY = 9
+TOP_QUANT_HEDGE_FUNDS = {
+    "Jane Street",
+    "Citadel",
+    "Citadel Securities",
+    "Hudson River Trading",
+    "Two Sigma",
+    "D.E. Shaw",
+    "Jump Trading",
+    "Optiver",
+    "IMC Trading",
+    "DRW",
+    "Susquehanna International Group",
+    "Five Rings",
+    "Akuna Capital",
+    "Millennium Management",
+    "Point72",
+    "Balyasny Asset Management",
+    "Bridgewater Associates",
+    "Schonfeld",
+    "Squarepoint Capital",
+    "Qube Research & Technologies",
+    "G-Research",
+    "XTX Markets",
+}
 
 def main():
     db = SessionLocal()
     try:
         inserted = updated = 0
         for name, url in companies:
+            priority = 10 if name in TOP_QUANT_HEDGE_FUNDS else PRIORITY
             company = db.query(Company).filter(Company.name == name).first()
             if company:
-                company.priority = PRIORITY
+                company.priority = priority
                 company.enabled = True
                 company.career_url = url
                 updated += 1
             else:
-                company = Company(name=name, priority=PRIORITY, enabled=True, career_url=url)
+                company = Company(name=name, priority=priority, enabled=True, career_url=url)
                 db.add(company)
                 inserted += 1
         db.commit()
